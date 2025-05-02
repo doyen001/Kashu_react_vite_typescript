@@ -1,7 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import FaceIDPage from "./pages/SignIn";
 import SignPinPage from "./pages/SignIn/signPin";
-import SignInMail from "./pages/SignIn/signInMail";
+import SignInMailPage from "./pages/SignIn/signInMail";
+import SignUpPage from "./pages/SignUp/signUp";
+import VerifyCodePage from "./pages/SignUp/verifyCodePage";
 
 export default function App() {
   return (
@@ -9,7 +11,9 @@ export default function App() {
       <Routes>
         <Route path="/" element={<FaceIDPage />}></Route>
         <Route path="/sign-pin" element={<SignPinPage />}></Route>
-        <Route path="/sign-mail" element={<SignInMail />}></Route>
+        <Route path="/sign-mail" element={<SignInMailPage />}></Route>
+        <Route path="/sign-up" element={<SignUpPage />}></Route>
+        <Route path="/verify-code" element={<VerifyCodePage />}></Route>
       </Routes>
     </BrowserRouter>
   );

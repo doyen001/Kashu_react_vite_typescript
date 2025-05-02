@@ -43,7 +43,7 @@ const SignPinPage = () => {
         </div>
 
         {/* Number Pad */}
-        <div className="grid grid-cols-3 gap-6 mt-6 text-xl font-medium text-primary">
+        <div className="grid w-full max-w-xs grid-cols-3 gap-0 mt-6">
           {[..."123456789000"].map((num, i) => {
             if (i === 9) return <div key="empty" />;
             if (i === 11) {
@@ -51,20 +51,22 @@ const SignPinPage = () => {
                 <button
                   key="backspace"
                   onClick={handleBackspace}
-                  className="flex items-center justify-center"
+                  className="flex items-center justify-center w-full text-lg font-semibold aspect-video"
                 >
                   <BackspaceIcon className="w-6 h-6" />
                 </button>
               );
             }
             return (
-              <button
-                key={num}
-                onClick={() => handleNumberClick(num)}
-                className="flex items-center justify-center"
-              >
-                {num}
-              </button>
+              <div key={num} className="col-span-1">
+                <button
+                  key={num}
+                  onClick={() => handleNumberClick(num)}
+                  className="flex items-center justify-center w-full text-lg font-semibold aspect-video"
+                >
+                  {num}
+                </button>
+              </div>
             );
           })}
         </div>

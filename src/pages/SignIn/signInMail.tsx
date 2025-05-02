@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import { Button } from "../../components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -5,8 +7,10 @@ import {
   GoogleIcon,
   ArrowRightIcon,
 } from "../../components/ui/icons";
+import FloatingInput from "../../components/ui/floatingInput";
 
-const SignInMail = () => {
+const SignInMailPage = () => {
+  const [email, setEmail] = useState("");
   return (
     <div className="flex flex-col justify-between min-h-screen px-6 py-10 bg-white">
       <div className="flex flex-col items-center w-full gap-8">
@@ -18,6 +22,12 @@ const SignInMail = () => {
 
         {/* Inputs */}
         <div className="flex flex-col w-full gap-4">
+          <FloatingInput
+            label="Username"
+            type="text"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
           <Input
             type="text"
             placeholder="Username"
@@ -66,4 +76,4 @@ const SignInMail = () => {
   );
 };
 
-export default SignInMail;
+export default SignInMailPage;
