@@ -13,6 +13,8 @@ export default {
       },
       colors: {
         primary: '#0B5147',
+        secondary: '#E1FFA0',
+        lightGreen: '#DAF6E8',
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
@@ -22,10 +24,6 @@ export default {
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
         },
         muted: {
           DEFAULT: "hsl(var(--muted))",
