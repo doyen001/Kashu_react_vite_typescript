@@ -1,7 +1,16 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import FaceIDPage from "./pages/SignIn";
+import SignPinPage from "./pages/SignIn/signPin";
+import SignInMail from "./pages/SignIn/signInMail";
+
 export default function App() {
   return (
-    <div className="flex items-center justify-center w-full h-screen">
-      <p className="text-2xl font-bold bg-primary">Hello World</p>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<FaceIDPage />}></Route>
+        <Route path="/sign-pin" element={<SignPinPage />}></Route>
+        <Route path="/sign-mail" element={<SignInMail />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }

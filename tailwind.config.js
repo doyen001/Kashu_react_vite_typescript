@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-
+const rem = num => ({ [num]: `${num / 16}rem` });
 
 export default {
   darkMode: ["class"],
@@ -12,7 +12,7 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       colors: {
-        primary: '#2AA8DF',
+        primary: '#0B5147',
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
@@ -49,6 +49,12 @@ export default {
           4: "hsl(var(--chart-4))",
           5: "hsl(var(--chart-5))",
         },
+      },
+      spacing: {
+        ...rem(88),
+      },
+      fontSize: {
+        ...rem(16),
       },
     },
   },
