@@ -2,14 +2,15 @@ import { useNavigate } from "react-router-dom";
 
 import { Button } from "../../components/ui/button";
 import { FaceIdIcon } from "../../components/ui/icons";
+import { Progress } from "../../components/ui/progress";
 
 const FaceIDPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col items-center justify-between w-full h-screen p-6 bg-white">
+    <div className="flex flex-col items-center justify-between w-full max-w-[800px] mx-auto h-screen p-6 bg-white">
       <div className="flex flex-col items-center w-full">
-        <div className="h-1 mb-6 rounded-full w-88 bg-primary" />
+        <Progress value={100} className="h-1 mb-6 w-88" />
 
         {/* Title and subtitle */}
         <div className="flex flex-col items-center justify-center w-full">
@@ -32,7 +33,7 @@ const FaceIDPage = () => {
       {/* Buttons */}
       <div className="flex flex-col items-center w-full gap-4">
         <Button
-          className="w-full text-white bg-primary hover:bg-primary"
+          className="w-full text-white bg-primary hover:bg-primary max-w-[312px]"
           onClick={() => navigate("/sign-pin")}
         >
           Enable face ID

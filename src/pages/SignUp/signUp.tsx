@@ -1,16 +1,45 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { z } from "zod";
+import { useForm } from "react-hook-form";
 
 import { AppleIcon, GoogleIcon } from "../../components/ui/icons";
 import FloatingInput from "../../components/ui/floatingInput";
 import { Button } from "../../components/ui/button";
 import { Progress } from "../../components/ui/progress";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { FormField } from "../../components/ui/form";
+
+const formSchema = z.object({
+  email: z
+    .string()
+    .min(2, {
+      message: "Username must be at least 2 characters.",
+    })
+    .email({ message: "Please enter a valid email address." }),
+  password: z.string().min(8, {
+    message: "Password must be at least 8 characters.",
+  }),
+});
+
+type FormSchema = z.infer<typeof formSchema>;
 
 const SignUpPage = () => {
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [progress, setProgress] = useState(0);
+
+  const form = useForm<FormSchema>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      email: "",
+      password: "",
+    },
+  });
+
+  const onSubmit = (values: FormSchema) => {
+    console.log(values);
+    navigate("/verify-code");
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => setProgress(15), 20);
@@ -31,27 +60,44 @@ const SignUpPage = () => {
 
       {/* Form */}
       <div className="w-full max-w-sm space-y-6">
-        <FloatingInput
-          label="Email address"
-          value={email}
-          onChange={(e) => {
-            console.log("e.target.value", e.target.value);
-            setEmail(e.target.value);
-          }}
-        />
-        <FloatingInput
-          label="Password"
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-
-        <Button
-          className="w-full py-2 text-base text-white bg-primary rounded-xl hover:bg-primary"
-          onClick={() => navigate("/verify-code")}
+        <form
+          className="w-full max-w-sm space-y-6"
+          onSubmit={form.handleSubmit(onSubmit)}
         >
-          Submit
-        </Button>
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FloatingInput
+                label="Email address"
+                type="text"
+                value={field.value}
+                onChange={field.onChange}
+                error={form.formState.errors.email}
+              />
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="password"
+            render={({ field }) => (
+              <FloatingInput
+                label="Password"
+                type="password"
+                value={field.value}
+                onChange={field.onChange}
+                error={form.formState.errors.password}
+              />
+            )}
+          />
+
+          <Button
+            type="submit"
+            className="w-full py-2 text-base text-white bg-primary rounded-xl hover:bg-primary"
+          >
+            Submit
+          </Button>
+        </form>
 
         {/* Sign In Link */}
         <p className="text-sm text-center text-primary">
@@ -81,9 +127,11 @@ const SignUpPage = () => {
 
         {/* Terms */}
         <div className="flex justify-center w-full">
-          <p className="mt-4 text-xs text-center text-[#0F7163] w-full max-w-[200px]">
-            By creating an account you agree to our{" "}
-            <span className="font-semibold text-primary">
+          <p className="mt-4 text-sm font-medium text-center text-primary w-full max-w-[220px]">
+            <span className="opacity-40">
+              By creating an account you agree to our
+            </span>{" "}
+            <span className="font-medium opacity-100 text-primary">
               Terms and Conditions
             </span>
           </p>

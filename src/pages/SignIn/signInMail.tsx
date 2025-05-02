@@ -1,56 +1,95 @@
-import { useState } from "react";
+import { z } from "zod";
+import { useForm } from "react-hook-form";
 
 import { Button } from "../../components/ui/button";
-import { Input } from "@/components/ui/input";
 import {
   AppleIcon,
   GoogleIcon,
   ArrowRightIcon,
 } from "../../components/ui/icons";
 import FloatingInput from "../../components/ui/floatingInput";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { FormField } from "../../components/ui/form";
+
+const formSchema = z.object({
+  username: z.string().min(2, {
+    message: "Username must be at least 2 characters.",
+  }),
+  password: z.string().min(8, {
+    message: "Password must be at least 8 characters.",
+  }),
+});
+
+type FormSchema = z.infer<typeof formSchema>;
 
 const SignInMailPage = () => {
-  const [email, setEmail] = useState("");
+  const form = useForm<FormSchema>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      username: "",
+      password: "",
+    },
+  });
+
+  const onSubmit = (values: FormSchema) => {
+    console.log(values);
+  };
+
   return (
-    <div className="flex flex-col justify-between min-h-screen px-6 py-10 bg-white">
-      <div className="flex flex-col items-center w-full gap-8">
-        {/* Title */}
-        <div className="text-center">
-          <h1 className="mb-2 text-3xl font-bold text-primary">Welcome back</h1>
-          <p className="text-sm text-primary">Sign in to your account</p>
-        </div>
+    <div className="flex flex-col justify-between min-h-screen px-6 py-10 bg-white max-w-[800px] w-full mx-auto">
+      <form onSubmit={form.handleSubmit(onSubmit)}>
+        <div className="flex flex-col items-center w-full gap-8">
+          {/* Title */}
+          <div className="text-center">
+            <h1 className="mb-2 text-3xl font-bold text-primary">
+              Welcome back
+            </h1>
+            <p className="text-sm text-primary">Sign in to your account</p>
+          </div>
 
-        {/* Inputs */}
-        <div className="flex flex-col w-full gap-4">
-          <FloatingInput
-            label="Username"
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <Input
-            type="text"
-            placeholder="Username"
-            className="w-full px-4 py-3 text-sm border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary"
-          />
-          <Input
-            type="password"
-            placeholder="Password"
-            className="w-full px-4 py-3 text-sm border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary"
-          />
-        </div>
+          {/* Inputs */}
+          <div className="flex flex-col w-full gap-4">
+            <FormField
+              control={form.control}
+              name="username"
+              render={({ field }) => (
+                <FloatingInput
+                  label="Username"
+                  type="text"
+                  value={field.value}
+                  onChange={field.onChange}
+                  error={form.formState.errors.username}
+                />
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="password"
+              render={({ field }) => (
+                <FloatingInput
+                  label="Password"
+                  type="password"
+                  value={field.value}
+                  onChange={field.onChange}
+                  error={form.formState.errors.password}
+                />
+              )}
+            />
+          </div>
 
-        {/* Forgot + Submit */}
-        <div className="flex items-center justify-between w-full">
-          <button className="text-sm text-primary">Forgot password?</button>
-          <Button
-            size="icon"
-            className="text-white rounded-xl bg-primary hover:bg-primary"
-          >
-            <ArrowRightIcon />
-          </Button>
+          {/* Forgot + Submit */}
+          <div className="flex items-center justify-between w-full">
+            <button className="text-sm text-primary">Forgot password?</button>
+            <Button
+              type="submit"
+              size="icon"
+              className="text-white rounded-xl bg-primary hover:bg-primary"
+            >
+              <ArrowRightIcon />
+            </Button>
+          </div>
         </div>
-      </div>
+      </form>
 
       {/* Social Sign-in */}
       <div className="flex flex-col items-center gap-6 mt-10">
