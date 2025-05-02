@@ -25,13 +25,11 @@ const SignPinPage = () => {
   return (
     <div className="flex flex-col items-center min-h-screen px-6 py-10 bg-white max-w-[800px] w-full mx-auto">
       <div className="flex flex-col items-center justify-between flex-1 w-full gap-10 space-y-15">
-        <div>
-          <h1 className="text-2xl font-bold text-center text-primary">
-            Enter your PIN
-          </h1>
+        <h1 className="text-2xl font-bold text-center text-primary">
+          Enter your PIN
+        </h1>
 
-          {/* PIN Dots */}
-        </div>
+        {/* PIN Dots */}
         <div className="flex gap-4">
           {[0, 1, 2, 3].map((i) => (
             <div

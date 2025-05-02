@@ -33,23 +33,23 @@ const VerifyCodePage = () => {
   const handleReset = () => setCode(["", "", "", "", "", ""]);
 
   return (
-    <div className="flex flex-col items-center justify-start min-h-screen px-6 py-8 bg-white text-primary">
+    <div className="flex flex-col items-center justify-between min-h-screen px-6 py-8 bg-white text-primary">
       {/* Back icon */}
-      <div
-        className="flex items-center w-full max-w-sm mb-4"
-        role="button"
-        onClick={() => navigate("/sign-up")}
-      >
-        <ArrowLeftIcon className="cursor-pointer" />
-      </div>
-      <div className="flex flex-col items-center justify-center w-full pt-5">
+      <div className="flex flex-col items-center justify-center w-full">
         {/* Progress bar */}
-        <div className="w-full max-w-16">
-          <Progress value={progress} />
+        <div className="relative flex justify-center w-full">
+          <Progress value={progress} className="max-w-16" />
+          <div
+            className="absolute left-0 w-full max-w-sm -top-2"
+            role="button"
+            onClick={() => navigate("/sign-up")}
+          >
+            <ArrowLeftIcon className="cursor-pointer" />
+          </div>
         </div>
 
         {/* Title and description */}
-        <div className="mb-6 text-center">
+        <div className="text-center">
           <h1 className="mb-2 text-xl font-semibold">Enter 6-digit code</h1>
           <p className="text-sm text-[#0F7163]">
             We’ve sent the code to j***@gm***.com. <br />
@@ -57,28 +57,30 @@ const VerifyCodePage = () => {
           </p>
         </div>
       </div>
-      {/* Code Input Display */}
-      <div className="flex gap-3 mb-4 pt-[5%]">
-        {code.map((digit, i) => (
-          <div
-            key={i}
-            className={clsx(
-              "w-9 h-14 border rounded-2xl flex items-center justify-center text-lg font-medium",
-              digit ? "border-primary" : "border-muted-foreground"
-            )}
-          >
-            {digit}
-          </div>
-        ))}
-      </div>
+      <div>
+        {/* Code Input Display */}
+        <div className="flex gap-3 mb-4">
+          {code.map((digit, i) => (
+            <div
+              key={i}
+              className={clsx(
+                "w-9 h-14 border rounded-2xl flex items-center justify-center text-lg font-medium",
+                digit ? "border-primary" : "border-muted-foreground"
+              )}
+            >
+              {digit}
+            </div>
+          ))}
+        </div>
 
-      {/* Resend */}
-      <p className="mb-10 text-sm font-bold cursor-pointer text-primary">
-        Resend
-      </p>
-      <div className="flex flex-col items-center justify-center flex-1 w-full">
+        {/* Resend */}
+        <p className="mb-20 text-sm font-bold text-center cursor-pointer sm:mb-0 text-primary">
+          Resend
+        </p>
+      </div>
+      <div className="flex flex-col items-center justify-center w-full pt-[48px]">
         {/* Number pad */}
-        <div className="grid w-full max-w-xs grid-cols-3 gap-0 mb-6">
+        <div className="grid w-full max-w-xs grid-cols-3 gap-0">
           {["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"].map((n) => (
             <button
               key={n}
