@@ -8,7 +8,7 @@ const FaceIDPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col items-center justify-between w-full max-w-[800px] mx-auto h-screen p-6 bg-white">
+    <div className="flex flex-col items-center justify-between w-full max-w-[800px] mx-auto h-screen overflow-hidden p-6 bg-white">
       <div className="flex flex-col items-center w-full">
         <Progress value={100} className="h-1 mb-6 w-88" />
 
