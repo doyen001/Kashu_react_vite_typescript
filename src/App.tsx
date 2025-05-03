@@ -11,7 +11,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<FaceIDPage />}></Route>
-        <Route path="/sign-pin" element={<SignPinPage />}></Route>
+        <Route path="sign-pin" element={<SignPinPage />}></Route>
         <Route path="/sign-mail" element={<SignInMailPage />}></Route>
         <Route path="/sign-up" element={<SignUpPage />}></Route>
         <Route path="/verify-code" element={<VerifyCodePage />}></Route>
