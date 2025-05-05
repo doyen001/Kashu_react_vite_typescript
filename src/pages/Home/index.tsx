@@ -37,7 +37,7 @@ const activityList = [
 
 const HomeOverviewPage = () => {
   return (
-    <div className="max-w-[800px] w-full mx-auto bg-white pb-28">
+    <div className="max-w-[800px] h-[calc(100vh-80px)] w-full mx-auto bg-white pb-28">
       {/* Header */}
       <HomeHeader />
 

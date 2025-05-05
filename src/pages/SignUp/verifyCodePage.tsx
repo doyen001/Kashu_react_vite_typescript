@@ -33,7 +33,7 @@ const VerifyCodePage = () => {
   const handleReset = () => setCode(["", "", "", "", "", ""]);
 
   return (
-    <div className="flex flex-col items-center justify-between min-h-screen px-6 py-8 bg-white text-primary">
+    <div className="flex flex-col items-center justify-between min-h-screen px-6 py-8 bg-white text-primary h-[calc(100vh-80px)] ">
       {/* Back icon */}
       <div className="flex flex-col items-center justify-center w-full">
         {/* Progress bar */}

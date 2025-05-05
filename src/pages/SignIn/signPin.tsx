@@ -23,7 +23,7 @@ const SignPinPage = () => {
   };
 
   return (
-    <div className="flex flex-col items-center min-h-screen px-6 py-10 bg-white max-w-[800px] w-full mx-auto">
+    <div className="flex flex-col items-center min-h-screen px-6 py-10 bg-white max-w-[800px] w-full h-[calc(100vh-80px)]  mx-auto">
       <div className="flex flex-col items-center justify-between flex-1 w-full gap-10 space-y-15">
         <h1 className="text-2xl font-bold text-center text-primary">
           Enter your PIN

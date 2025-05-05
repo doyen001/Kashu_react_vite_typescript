@@ -7,7 +7,7 @@ import HomeInvite from "../../components/_module/home/homeInvite";
 
 const HomeVerifyPage = () => {
   return (
-    <div className="min-h-screen bg-[#F7FDFB] flex flex-col items-center justify-start pb-24">
+    <div className="min-h-screen bg-[#F7FDFB] flex flex-col items-center justify-start pb-24 h-[calc(100vh-80px)] ">
       {/* Top Header */}
       <div className="w-full bg-primary min-h-[300px] h-full text-white px-6 py-8 rounded-b-[2rem] relative text-center z-10">
         {/* Logo */}

@@ -47,7 +47,7 @@ const SignUpPage = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-between min-h-screen px-6 py-8 bg-white">
+    <div className="flex flex-col items-center justify-between min-h-screen px-6 py-8 bg-white h-[calc(100vh-80px)]">
       <div className="flex flex-col items-center justify-center w-full pt-10">
         <div className="w-full mb-2 max-w-16">
           <Progress value={progress} />
