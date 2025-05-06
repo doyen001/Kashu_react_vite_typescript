@@ -1,6 +1,5 @@
 import { useState } from "react";
 import clsx from "clsx";
-import { EyeIcon } from "./icons";
 import { FieldError } from "react-hook-form";
 
 interface FloatingInputProps {
@@ -11,7 +10,7 @@ interface FloatingInputProps {
   error?: FieldError;
 }
 
-const FloatingInput = ({
+const FloatingEditInput = ({
   label,
   type = "text",
   value,
@@ -19,14 +18,14 @@ const FloatingInput = ({
   error,
 }: FloatingInputProps) => {
   const [isFocused, setIsFocused] = useState(false);
-  const [showPassword, setShowPassword] = useState(false);
+  const [editable, setEditable] = useState(false);
 
   const shouldFloat = isFocused || value?.length > 0;
 
   return (
     <div className="relative w-full">
       <input
-        type={showPassword ? "text" : type}
+        type={editable ? "text" : type}
         value={value}
         onChange={onChange}
         onFocus={() => setIsFocused(true)}
@@ -34,6 +33,7 @@ const FloatingInput = ({
         className="w-full px-4 pt-6 pb-1 text-base font-medium placeholder-transparent border peer border-primary rounded-xl text-primary focus:outline-none focus:border-2 focus:border-primary"
         placeholder={label}
         id={label}
+        readOnly={!editable}
       />
       <label
         className={clsx(
@@ -45,16 +45,17 @@ const FloatingInput = ({
       >
         {label}
       </label>
-      {type === "password" && value && value.length > 0 && (
-        <EyeIcon
-          className="absolute -translate-y-1/2 right-4 top-7"
-          role="button"
-          onClick={() => setShowPassword((prev) => !prev)}
-        />
-      )}
+      <label
+        className="absolute -translate-y-1/2 right-4 top-7"
+        role="button"
+        htmlFor={label}
+        onClick={() => setEditable((prev) => !prev)}
+      >
+        Edit
+      </label>
       {error && <p className="text-sm text-red-500">{error.message}</p>}
     </div>
   );
 };
 
-export default FloatingInput;
+export default FloatingEditInput;
