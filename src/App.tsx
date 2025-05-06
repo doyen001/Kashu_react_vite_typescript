@@ -6,17 +6,31 @@ import SignUpPage from "./pages/SignUp/signUp";
 import VerifyCodePage from "./pages/SignUp/verifyCodePage";
 // import HomeVerifyPage from "./pages/Home/homeVerify";
 import HomeOverviewPage from "./pages/Home";
+import SignUpTelPage from "./pages/SignUp/tel";
+import TelCode from "./pages/SignUp/telCode";
+import MainProvider from "./context/mainContext";
+import InfoPersonal from "./pages/SignUp/infoPersonal";
+import InfoAddress from "./pages/SignUp/infoAddress";
+import SignUpCheck from "./pages/SignUp/check";
+
 export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<FaceIDPage />}></Route>
-        <Route path="sign-pin" element={<SignPinPage />}></Route>
-        <Route path="/sign-mail" element={<SignInMailPage />}></Route>
-        <Route path="/sign-up" element={<SignUpPage />}></Route>
-        <Route path="/verify-code" element={<VerifyCodePage />}></Route>
-        <Route path="/home" element={<HomeOverviewPage />}></Route>
-      </Routes>
-    </BrowserRouter>
+    <MainProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<FaceIDPage />}></Route>
+          <Route path="/home" element={<HomeOverviewPage />}></Route>
+          <Route path="sign-pin" element={<SignPinPage />}></Route>
+          <Route path="/sign-mail" element={<SignInMailPage />}></Route>
+          <Route path="/sign-up" element={<SignUpPage />}></Route>
+          <Route path="/verify-code" element={<VerifyCodePage />}></Route>
+          <Route path="/sign_up_tel" element={<SignUpTelPage />}></Route>
+          <Route path="/sign_up_tel_code" element={<TelCode />}></Route>
+          <Route path="/sign_up_personal" element={<InfoPersonal />}></Route>
+          <Route path="/sign_up_address" element={<InfoAddress />}></Route>
+          <Route path="/sign_up_check" element={<SignUpCheck />}></Route>
+        </Routes>
+      </BrowserRouter>
+    </MainProvider>
   );
 }
