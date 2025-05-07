@@ -1,20 +1,14 @@
-import { useEffect, useState } from "react";
-import { ArrowLeftIcon } from "lucide-react"; // Or your custom icon
+import { useContext, useEffect, useState } from "react";
+import PhoneKeyboardBox from "../../components/ui/phoneKeyboardBox";
 import clsx from "clsx";
 import { useNavigate } from "react-router-dom";
-import { Progress } from "../../components/ui/progress";
-// import { BackspaceIcon } from "../../components/ui/icons";
-import PhoneKeyboardBox from "../../components/ui/phoneKeyboardBox";
+import { MainContext } from "../../context/mainContext";
+import SignupHeader from "../../components/pages/signup/signupHeader";
 
-const VerifyCodePage = () => {
+const TelCode = () => {
   const navigate = useNavigate();
-  const [code, setCode] = useState<string[]>(["", "", "", "", "", ""]);
-  const [progress, setProgress] = useState(15);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setProgress(30), 20);
-    return () => clearTimeout(timer);
-  }, []);
+  const { userData } = useContext(MainContext);
+  const [code, setCode] = useState<string[]>(["", "", "", ""]);
 
   const handleKeyPress = (digit: string) => {
     const newCode = [...code];
@@ -31,30 +25,26 @@ const VerifyCodePage = () => {
     setCode(newCode);
   };
 
-  const handleReset = () => setCode(["", "", "", "", "", ""]);
+  const handleReset = () => setCode(["", "", "", ""]);
+
+  useEffect(() => {
+    if (code.every((item) => item !== "")) {
+      navigate("/sign_up_personal");
+    }
+  }, [code]);
 
   return (
     <div className="flex flex-col items-center justify-between min-h-screen px-6 py-8 bg-white text-primary h-[calc(100vh-80px)] ">
       {/* Back icon */}
       <div className="flex flex-col items-center justify-center w-full">
         {/* Progress bar */}
-        <div className="relative flex justify-center w-full">
-          <Progress value={progress} className="max-w-16" />
-          <div
-            className="absolute left-0 w-full max-w-sm -top-2"
-            role="button"
-            onClick={() => navigate("/sign-up")}
-          >
-            <ArrowLeftIcon className="cursor-pointer" />
-          </div>
-        </div>
+        <SignupHeader maxProgress={30} navigateTo="/sign_up_tel" />
 
         {/* Title and description */}
-        <div className="text-center">
-          <h1 className="mb-2 text-xl font-semibold">Enter 6-digit code</h1>
-          <p className="text-sm text-[#0F7163]">
-            We’ve sent the code to j***@gm***.com. <br />
-            Can’t find it? Check your spam folder.
+        <div className="mt-4 text-center">
+          <h1 className="mb-2 text-2xl font-bold">Enter 6-digit code</h1>
+          <p className="text-sm text-primary">
+            {`We’ve sent the code to ****${userData?.phone?.slice(-3) ?? 0}`}
           </p>
         </div>
       </div>
@@ -65,7 +55,7 @@ const VerifyCodePage = () => {
             <div
               key={i}
               className={clsx(
-                "w-9 h-14 border rounded-2xl flex items-center justify-center text-lg font-medium",
+                "w-12 h-12 border rounded-2xl flex items-center justify-center text-lg font-medium",
                 digit ? "border-primary" : "border-muted-foreground"
               )}
             >
@@ -90,4 +80,4 @@ const VerifyCodePage = () => {
   );
 };
 
-export default VerifyCodePage;
+export default TelCode;
