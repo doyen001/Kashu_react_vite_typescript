@@ -6,9 +6,14 @@ import { useNavigate } from "react-router-dom";
 type Props = {
   maxProgress: number;
   navigateTo: string;
+  isBackButton?: boolean;
 };
 
-const SignupHeader: React.FC<Props> = ({ maxProgress, navigateTo }) => {
+const SignupHeader: React.FC<Props> = ({
+  maxProgress,
+  navigateTo,
+  isBackButton = true,
+}) => {
   const navigate = useNavigate();
   const [progress, setProgress] = useState(0);
 
@@ -20,13 +25,15 @@ const SignupHeader: React.FC<Props> = ({ maxProgress, navigateTo }) => {
   return (
     <div className="relative flex justify-center w-full">
       <Progress value={progress} className="max-w-16" />
-      <div
-        className="absolute left-0 w-full max-w-sm -top-2"
-        role="button"
-        onClick={() => navigate(navigateTo)}
-      >
-        <ArrowLeftIcon className="cursor-pointer" />
-      </div>
+      {isBackButton && (
+        <div
+          className="absolute left-0 w-full max-w-sm -top-2"
+          role="button"
+          onClick={() => navigate(navigateTo)}
+        >
+          <ArrowLeftIcon className="cursor-pointer" />
+        </div>
+      )}
     </div>
   );
 };

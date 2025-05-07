@@ -1,4 +1,6 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
 import {
   Dialog,
   DialogContent,
@@ -14,9 +16,10 @@ type Props = {
   onOpenChange: (open: boolean) => void;
 };
 const SuccessModel: React.FC<Props> = ({ isOpen = false, onOpenChange }) => {
+  const navigate = useNavigate();
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-[800px] w-[calc(100%-48px)] rounded-[40px] block">
+      <DialogContent className="max-w-[800px] w-[calc(100%-48px)] rounded-[40px] block [&>button]:hidden">
         <DialogHeader>
           <DialogTitle className="pt-[70px] font-bold text-4xl text-primary">
             <p>Great job!</p>
@@ -33,7 +36,11 @@ const SuccessModel: React.FC<Props> = ({ isOpen = false, onOpenChange }) => {
         </div>
         <img src={successImage} alt="success" />
         <DialogFooter>
-          <Button type="submit" className="text-white">
+          <Button
+            type="submit"
+            className="text-white"
+            onClick={() => navigate("/sign_up_face_id")}
+          >
             Continue
           </Button>
         </DialogFooter>

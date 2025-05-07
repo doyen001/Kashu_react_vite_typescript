@@ -1,12 +1,11 @@
 import { z } from "zod";
+import { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import SignupHeader from "../../components/pages/signup/signupHeader";
-import { useNavigate } from "react-router-dom";
 import { FormField } from "../../components/ui/form";
 import { Button } from "../../components/ui/button";
-import { useContext, useEffect, useState } from "react";
 import { MainContext } from "../../context/mainContext";
 import FloatingEditInput from "../../components/ui/floatingEditInput";
 import SuccessModel from "../../components/_module/signup/successModel";
@@ -29,7 +28,6 @@ const formSchema = z.object({
 type FormSchema = z.infer<typeof formSchema>;
 
 const SignUpCheck = () => {
-  const navigate = useNavigate();
   const { userData, setUserData } = useContext(MainContext);
   const [isOpen, setIsOpen] = useState(false);
   const form = useForm<FormSchema>({
@@ -46,7 +44,6 @@ const SignUpCheck = () => {
     console.log(values);
     setUserData((prev: any) => ({ ...prev, ...values }));
     setIsOpen(true);
-    // navigate("/verify-code");
   };
 
   useEffect(() => {

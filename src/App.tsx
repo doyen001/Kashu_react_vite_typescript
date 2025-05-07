@@ -12,6 +12,9 @@ import MainProvider from "./context/mainContext";
 import InfoPersonal from "./pages/SignUp/infoPersonal";
 import InfoAddress from "./pages/SignUp/infoAddress";
 import SignUpCheck from "./pages/SignUp/check";
+import FaceId from "./pages/SignUp/faceId";
+import PinPage from "./pages/SignUp/pin";
+import SignUpQuestionPage from "./pages/SignUp/question";
 
 export default function App() {
   return (
@@ -29,6 +32,12 @@ export default function App() {
           <Route path="/sign_up_personal" element={<InfoPersonal />}></Route>
           <Route path="/sign_up_address" element={<InfoAddress />}></Route>
           <Route path="/sign_up_check" element={<SignUpCheck />}></Route>
+          <Route path="/sign_up_face_id" element={<FaceId />}></Route>
+          <Route path="/sign_up_pin" element={<PinPage />}></Route>
+          <Route
+            path="/sign_up_question"
+            element={<SignUpQuestionPage />}
+          ></Route>
         </Routes>
       </BrowserRouter>
     </MainProvider>
