@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://github.com/doyen001/Kashu_react_vite_typescript",
   "scripts": {
     "dev": "vite --host",
     "build": "tsc -b && vite build",

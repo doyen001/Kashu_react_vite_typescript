@@ -5,6 +5,7 @@ import vercel from 'vite-plugin-vercel';
 
 export default defineConfig({
   plugins: [react(), vercel()],
+  base: "/Kashu_react_vite_typescript",
   server: {
     port: 5173,
   },
