@@ -16,6 +16,7 @@ import PinPage from "./pages/SignUp/pin";
 import SignUpQuestionPage from "./pages/SignUp/question";
 import VerifyStart from "./pages/Home/verify";
 import PassportCheck from "./pages/Home/verify/passportCheck";
+import LoadingPage from "./pages/Loading";
 
 export default function App() {
   return (
@@ -41,6 +42,7 @@ export default function App() {
           ></Route>
           <Route path="/verify_start" element={<VerifyStart />}></Route>
           <Route path="/verify_passport" element={<PassportCheck />}></Route>
+          <Route path="/loading" element={<LoadingPage />} />
         </Routes>
       </BrowserRouter>
     </MainProvider>
