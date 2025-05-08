@@ -1,26 +1,44 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import FaceIDPage from "./pages/SignIn";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+// import FaceIDPage from "./pages/SignIn";
 import SignPinPage from "./pages/SignIn/signPin";
-import SignInMailPage from "./pages/SignIn/signInMail";
-import SignUpPage from "./pages/SignUp/signUp";
-import VerifyCodePage from "./pages/SignUp/verifyCodePage";
+// import SignInMailPage from "./pages/SignIn/signInMail";
+// import SignUpPage from "./pages/SignUp/signUp";
+// import VerifyCodePage from "./pages/SignUp/verifyCodePage";
 import HomeOverviewPage from "./pages/Home";
-import SignUpTelPage from "./pages/SignUp/tel";
-import TelCode from "./pages/SignUp/telCode";
+// import SignUpTelPage from "./pages/SignUp/tel";
+// import TelCode from "./pages/SignUp/telCode";
 import MainProvider from "./context/mainContext";
-import InfoPersonal from "./pages/SignUp/infoPersonal";
-import InfoAddress from "./pages/SignUp/infoAddress";
-import SignUpCheck from "./pages/SignUp/check";
-import FaceId from "./pages/SignUp/faceId";
-import PinPage from "./pages/SignUp/pin";
-import SignUpQuestionPage from "./pages/SignUp/question";
-import VerifyStart from "./pages/Home/verify";
-import PassportCheck from "./pages/Home/verify/passportCheck";
+// import InfoPersonal from "./pages/SignUp/infoPersonal";
+// import InfoAddress from "./pages/SignUp/infoAddress";
+// import SignUpCheck from "./pages/SignUp/check";
+// import FaceId from "./pages/SignUp/faceId";
+// import PinPage from "./pages/SignUp/pin";
+// import SignUpQuestionPage from "./pages/SignUp/question";
+// import VerifyStart from "./pages/Home/verify";
+// import PassportCheck from "./pages/Home/verify/passportCheck";
 
 export default function App() {
+  const router = createBrowserRouter([
+    {
+      path: "/Kashu_react_vite_typescript/",
+      element: <App />,
+      children: [
+        {
+          path: "/Kashu_react_vite_typescript/home",
+          element: <HomeOverviewPage />,
+        },
+        {
+          path: "/Kashu_react_vite_typescript/sign-pin",
+          element: <SignPinPage />,
+        },
+      ],
+    },
+  ]);
+
   return (
     <MainProvider>
-      <BrowserRouter basename="/Kashu_react_vite_typescript">
+      <RouterProvider router={router} />
+      {/* <BrowserRouter basename="/Kashu_react_vite_typescript">
         <Routes>
           <Route path="/" element={<FaceIDPage />}></Route>
           <Route path="/home" element={<HomeOverviewPage />}></Route>
@@ -42,7 +60,7 @@ export default function App() {
           <Route path="/verify_start" element={<VerifyStart />}></Route>
           <Route path="/verify_passport" element={<PassportCheck />}></Route>
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
     </MainProvider>
   );
 }
