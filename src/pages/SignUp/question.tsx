@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 import SignupHeader from "../../components/pages/signup/signupHeader";
 import PriorityList from "../../components/_module/signup/priorityList";
 import { Button } from "../../components/ui/button";
@@ -11,6 +13,7 @@ const priorityList = [
 ];
 
 const SignUpQuestionPage = () => {
+  const navigate = useNavigate();
   return (
     <div className="flex flex-col items-center w-full max-w-[800px] mx-auto h-[calc(100vh-80px)] p-6 bg-white gap-6">
       <SignupHeader maxProgress={100} navigateTo="" isBackButton={false} />
@@ -28,8 +31,8 @@ const SignUpQuestionPage = () => {
       <PriorityList priorityList={priorityList} />
       <div className="flex justify-end w-full">
         <Button
-          type="submit"
           className="w-[58px] h-[58px] py-2 text-base text-white bg-primary rounded-2xl"
+          onClick={() => navigate("/home")}
         >
           <ArrowRightIcon />
         </Button>

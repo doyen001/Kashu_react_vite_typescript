@@ -3,7 +3,7 @@ import { HomeIcon, MenuIcon, UserIcon, WalletIcon } from "../../ui/icons";
 
 const HomeNavigation = () => {
   return (
-    <div className="fixed bottom-0 left-1/2 -translate-x-1/2 z-10 w-full max-w-[800px] bg-white shadow-md h-14">
+    <div className="fixed bottom-0 left-1/2 -translate-x-1/2 z-30 w-full max-w-[800px] bg-white shadow-md h-14">
       <div className="flex items-center justify-around px-4 py-2">
         <button className="flex flex-col items-center text-emerald-700">
           <HomeIcon />

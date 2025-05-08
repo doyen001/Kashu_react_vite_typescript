@@ -1,13 +1,14 @@
+import { useNavigate } from "react-router-dom";
+
+import HomeInvite from "../../_module/home/homeInvite";
+import { CardSVG, InfoIcon, KashuLogo } from "../../ui/icons";
 import { PlusIcon } from "lucide-react";
+import { Button } from "../../ui/button";
 
-import { Button } from "../../components/ui/button";
-import { CardSVG, InfoIcon, KashuLogo } from "../../components/ui/icons";
-import HomeNavigation from "../../components/_module/home/homeNavigation";
-import HomeInvite from "../../components/_module/home/homeInvite";
-
-const HomeVerifyPage = () => {
+const UnverifiedHome = () => {
+  const navigate = useNavigate();
   return (
-    <div className="min-h-screen bg-[#F7FDFB] flex flex-col items-center justify-start pb-24 h-[calc(100vh-80px)] ">
+    <div className="min-h-screen bg-[#F7FDFB] flex flex-col items-center justify-start">
       {/* Top Header */}
       <div className="w-full bg-primary min-h-[300px] h-full text-white px-6 py-8 rounded-b-[2rem] relative text-center z-10">
         {/* Logo */}
@@ -16,7 +17,7 @@ const HomeVerifyPage = () => {
         </div>
 
         <div className="py-9">
-          <h1 className="text-xl font-semibold">Welcome, Robert</h1>
+          <h1 className="text-4xl font-bold">Welcome, Robert</h1>
           <p className="mt-1 text-3xl font-bold">$0.00</p>
           <div className="flex items-center justify-center gap-1 mt-1 text-sm text-white/80">
             Available balance
@@ -29,13 +30,16 @@ const HomeVerifyPage = () => {
       <div className="z-20 w-full max-w-sm px-4 -mt-20 space-y-4 text-center">
         {/* Unlock features card */}
         <div className="p-4 rounded-3xl bg-secondary">
-          <h2 className="mb-1 text-lg font-semibold text-primary">
+          <h2 className="mb-1 text-2xl font-bold text-primary">
             Unlock all features
           </h2>
-          <p className="mb-4 text-sm text-primary w-[65%] mx-auto">
+          <p className="mb-6 text-sm text-primary w-[65%] mx-auto">
             Please verify your ID and unlock all app features
           </p>
-          <button className="flex items-center justify-center w-full gap-2 font-medium text-primary">
+          <button
+            className="flex items-center justify-center w-full gap-2 font-medium text-primary"
+            onClick={() => navigate("/verify_start")}
+          >
             <div className="bg-[#C3F5AE] p-3 rounded-full">
               <PlusIcon className="w-4 h-4" />
             </div>
@@ -62,10 +66,8 @@ const HomeVerifyPage = () => {
         {/* Invite friends */}
         <HomeInvite code={"LP867J"} />
       </div>
-
-      <HomeNavigation />
     </div>
   );
 };
 
-export default HomeVerifyPage;
+export default UnverifiedHome;

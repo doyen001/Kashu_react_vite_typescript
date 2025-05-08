@@ -4,7 +4,6 @@ import SignPinPage from "./pages/SignIn/signPin";
 import SignInMailPage from "./pages/SignIn/signInMail";
 import SignUpPage from "./pages/SignUp/signUp";
 import VerifyCodePage from "./pages/SignUp/verifyCodePage";
-// import HomeVerifyPage from "./pages/Home/homeVerify";
 import HomeOverviewPage from "./pages/Home";
 import SignUpTelPage from "./pages/SignUp/tel";
 import TelCode from "./pages/SignUp/telCode";
@@ -15,6 +14,8 @@ import SignUpCheck from "./pages/SignUp/check";
 import FaceId from "./pages/SignUp/faceId";
 import PinPage from "./pages/SignUp/pin";
 import SignUpQuestionPage from "./pages/SignUp/question";
+import VerifyStart from "./pages/Home/verify";
+import PassportCheck from "./pages/Home/verify/passportCheck";
 
 export default function App() {
   return (
@@ -38,6 +39,8 @@ export default function App() {
             path="/sign_up_question"
             element={<SignUpQuestionPage />}
           ></Route>
+          <Route path="/verify_start" element={<VerifyStart />}></Route>
+          <Route path="/verify_passport" element={<PassportCheck />}></Route>
         </Routes>
       </BrowserRouter>
     </MainProvider>

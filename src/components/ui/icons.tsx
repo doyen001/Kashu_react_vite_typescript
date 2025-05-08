@@ -605,6 +605,24 @@ export const ArrowUpIconWithoutLine = ({
   </svg>
 );
 
+export const InfoSvg = ({ height = 10, width = 3, ...props }) => (
+  <svg
+    width={width}
+    height={height}
+    viewBox="0 0 3 10"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M0.791956 1.18945C0.791956 1.67145 1.16142 2.06445 1.61403 2.06445C2.07988 2.06445 2.45028 1.67145 2.45028 1.18945C2.45028 0.707453 2.07988 0.314453 1.62348 0.314453C1.1652 0.314453 0.791956 0.707453 0.791956 1.18945ZM2.44083 4.36225C2.44083 3.88025 2.06948 3.48725 1.61403 3.48725C1.15858 3.48725 0.787231 3.88025 0.787231 4.36225V8.78225C0.787231 9.26425 1.15858 9.65725 1.61403 9.65725C2.06948 9.65725 2.44083 9.26425 2.44083 8.78225V4.36225Z"
+      fill="#0B5147"
+      fillOpacity="0.8"
+    />
+  </svg>
+);
 export const EyeIcon = ({ height = 24, width = 24, ...props }) => (
   <svg
     width={width}
