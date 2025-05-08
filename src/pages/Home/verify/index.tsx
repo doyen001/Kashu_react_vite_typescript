@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Progress } from "../../../components/ui/progress";
-import { InfoIcon, XIcon } from "lucide-react";
+import { XIcon } from "lucide-react";
 import { InfoSvg } from "../../../components/ui/icons";
 import VerifyTypeCard from "../../../components/_module/home/verify/verifyTypeCard";
 import { Button } from "../../../components/ui/button";
-import SuccessModel from "../../../components/_module/signup/successModel";
 import VerifyIdMethodModal from "../../../components/_module/home/verify/verifyIdMethodModal";
 
 const cardList = [
