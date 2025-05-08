@@ -20,7 +20,7 @@ import PassportCheck from "./pages/Home/verify/passportCheck";
 export default function App() {
   return (
     <MainProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/Kashu_react_vite_typescript">
         <Routes>
           <Route path="/" element={<FaceIDPage />}></Route>
           <Route path="/home" element={<HomeOverviewPage />}></Route>
