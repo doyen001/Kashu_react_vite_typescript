@@ -27,6 +27,7 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<WelcomePage />}></Route>
+          <Route path="/face_id" element={<FaceIDPage />}></Route>
           <Route
             path="/*"
             element={
