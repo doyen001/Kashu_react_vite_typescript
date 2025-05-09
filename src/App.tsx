@@ -20,6 +20,10 @@ import LoadingPage from "./pages/Loading";
 import WelcomePage from "./pages/Welcome";
 import WelcomeMessagePage from "./pages/Welcome/message";
 import HomeLayout from "./layout";
+import CardViewPage from "./pages/Home/card";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default function App() {
   return (
@@ -34,6 +38,7 @@ export default function App() {
               <HomeLayout>
                 <Routes>
                   <Route path="/home" element={<HomeOverviewPage />}></Route>
+                  <Route path="/card" element={<CardViewPage />}></Route>
                 </Routes>
               </HomeLayout>
             }

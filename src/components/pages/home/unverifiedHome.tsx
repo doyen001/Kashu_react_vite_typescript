@@ -1,21 +1,16 @@
 import { useNavigate } from "react-router-dom";
 
 import HomeInvite from "../../_module/home/homeInvite";
-import { CardSVG, InfoIcon, KashuLogo } from "../../ui/icons";
+import { CardSVG, InfoIcon } from "../../ui/icons";
 import { PlusIcon } from "lucide-react";
 import { Button } from "../../ui/button";
 
 const UnverifiedHome = () => {
   const navigate = useNavigate();
   return (
-    <div className="min-h-screen bg-[#F7FDFB] flex flex-col items-center justify-start">
+    <div className="inset-0 absolute top-0 min-h-screen bg-[#F7FDFB] flex flex-col items-center justify-start z-10">
       {/* Top Header */}
       <div className="w-full bg-primary min-h-[300px] h-full text-white px-6 py-8 rounded-b-[2rem] relative text-center z-10">
-        {/* Logo */}
-        <div className="flex justify-center">
-          <KashuLogo />
-        </div>
-
         <div className="py-9">
           <h1 className="text-4xl font-bold">Welcome, Robert</h1>
           <p className="mt-1 text-3xl font-bold">$0.00</p>

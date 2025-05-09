@@ -1,16 +1,15 @@
 import bgImage from "@/assets/bgImage.png";
-import { TransferIcon, InfoIcon, KashuLogo } from "@/components/ui/icons";
+import { TransferIcon, InfoIcon } from "@/components/ui/icons";
 
 const HomeHeader = () => {
   return (
     <div
-      className="relative w-full text-white px-6 pt-6 pb-20 bg-cover bg-bottom bg-no-repeat min-h-[40vh]"
+      className="relative inset-0 w-full text-white px-6 pt-6 pb-20 bg-cover bg-bottom bg-no-repeat min-h-[40vh]"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
-      <div className="flex items-center justify-center mb-4">
+      {/* <div className="flex items-center justify-center mb-4">
         <KashuLogo className="w-24 h-24" />
-        {/* <img src={logo} alt="Apple" className="w-24 h-24" /> */}
-      </div>
+      </div> */}
 
       <div className="space-y-1 text-center">
         <h1 className="font-sans text-4xl font-bold">Welcome, Robert</h1>
