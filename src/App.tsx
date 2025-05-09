@@ -22,6 +22,7 @@ import WelcomeMessagePage from "./pages/Welcome/message";
 import HomeLayout from "./layout";
 import CardViewPage from "./pages/Home/card";
 
+import "./style/global.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
