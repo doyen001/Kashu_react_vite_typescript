@@ -15,6 +15,7 @@ export default {
         primary: '#0B5147',
         secondary: '#E1FFA0',
         thirdGreen: '#F1FAF3',
+        fourthGreen: '#0FD790',
         lightGreen: '#DAF6E8',
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",

@@ -17,13 +17,15 @@ import SignUpQuestionPage from "./pages/SignUp/question";
 import VerifyStart from "./pages/Home/verify";
 import PassportCheck from "./pages/Home/verify/passportCheck";
 import LoadingPage from "./pages/Loading";
+import WelcomePage from "./pages/Welcome";
+import WelcomeMessagePage from "./pages/Welcome/message";
 
 export default function App() {
   return (
     <MainProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<FaceIDPage />}></Route>
+          <Route path="/" element={<WelcomePage />}></Route>
           <Route path="/home" element={<HomeOverviewPage />}></Route>
           <Route path="sign-pin" element={<SignPinPage />}></Route>
           <Route path="/sign-mail" element={<SignInMailPage />}></Route>
@@ -43,6 +45,8 @@ export default function App() {
           <Route path="/verify_start" element={<VerifyStart />}></Route>
           <Route path="/verify_passport" element={<PassportCheck />}></Route>
           <Route path="/loading" element={<LoadingPage />} />
+          <Route path="/welcome" element={<WelcomePage />} />
+          <Route path="/welcome-message" element={<WelcomeMessagePage />} />
         </Routes>
       </BrowserRouter>
     </MainProvider>
