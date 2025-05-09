@@ -14,13 +14,18 @@ const WelcomePage = () => {
       </div>
       <div className="flex flex-col w-full gap-1">
         <Button
-          className="w-full text-primary bg-secondary focus:bg-secondary"
+          className="w-full text-primary bg-secondary focus:bg-secondary hover:bg-secondary"
           size={"lg"}
           onClick={() => navigate("/welcome-message")}
         >
           Get Started
         </Button>
-        <button className="w-full py-4 text-secondary">Sign In</button>
+        <button
+          className="w-full py-4 text-secondary"
+          onClick={() => navigate("/face_id")}
+        >
+          Sign In
+        </button>
       </div>
     </div>
   );

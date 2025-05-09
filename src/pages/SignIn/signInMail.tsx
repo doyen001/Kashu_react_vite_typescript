@@ -10,6 +10,7 @@ import {
 import FloatingInput from "../../components/ui/floatingInput";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FormField } from "../../components/ui/form";
+import { useNavigate } from "react-router-dom";
 
 const formSchema = z.object({
   username: z.string().min(2, {
@@ -23,6 +24,7 @@ const formSchema = z.object({
 type FormSchema = z.infer<typeof formSchema>;
 
 const SignInMailPage = () => {
+  const navigate = useNavigate();
   const form = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -33,6 +35,7 @@ const SignInMailPage = () => {
 
   const onSubmit = (values: FormSchema) => {
     console.log(values);
+    navigate("/home");
   };
 
   return (
