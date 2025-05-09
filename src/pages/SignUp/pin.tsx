@@ -9,7 +9,7 @@ const PinPage = () => {
   const [pin, setPin] = useState<string>("");
 
   return (
-    <div className="flex flex-col items-center justify-between w-full max-w-[800px] mx-auto h-[calc(100vh-80px)] p-6 bg-white">
+    <div className="flex flex-col items-center justify-between w-full max-w-[800px] mx-auto h-[100dvh] p-6 bg-white">
       <SignupHeader maxProgress={80} navigateTo="" isBackButton={false} />
       <div className="mt-4 text-center">
         <h1 className="mb-2 text-2xl font-bold text-primary">

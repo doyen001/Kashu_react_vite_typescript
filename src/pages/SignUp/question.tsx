@@ -15,7 +15,7 @@ const priorityList = [
 const SignUpQuestionPage = () => {
   const navigate = useNavigate();
   return (
-    <div className="flex flex-col items-center w-full max-w-[800px] mx-auto h-[calc(100vh-80px)] p-6 bg-white gap-6">
+    <div className="flex flex-col items-center w-full max-w-[800px] mx-auto h-[100dvh] p-6 bg-white gap-6">
       <SignupHeader maxProgress={100} navigateTo="" isBackButton={false} />
       <div className="mt-4 text-center">
         <h1 className="mb-2 text-2xl font-bold text-primary">

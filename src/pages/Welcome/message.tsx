@@ -25,7 +25,7 @@ const WelcomeMessagePage = () => {
   };
 
   return (
-    <div className=" flex flex-col justify-between bg-white text-primary h-[100vh] max-w-[800px] w-full mx-auto">
+    <div className=" flex flex-col justify-between bg-white text-primary h-[100dvh] max-w-[800px] w-full mx-auto">
       <div
         className="relative w-full text-white px-6 pt-6 pb-20 bg-cover bg-bottom bg-no-repeat h-[370px]"
         style={{ backgroundImage: `url(${bgImage})` }}

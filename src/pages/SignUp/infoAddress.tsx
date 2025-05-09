@@ -52,7 +52,7 @@ const InfoAddress = () => {
   };
 
   return (
-    <div className="flex flex-col items-center min-h-screen px-6 py-8 bg-white text-primary h-[calc(100vh-80px)] ">
+    <div className="flex flex-col items-center min-h-screen px-6 py-8 bg-white text-primary h-[100dvh] ">
       <SignupHeader maxProgress={40} navigateTo="/sign_up_personal" />
       <div className="mt-4 text-center">
         <h1 className="mb-2 text-2xl font-bold">Home Address</h1>

@@ -48,7 +48,7 @@ const InfoPersonal = () => {
   };
 
   return (
-    <div className="flex flex-col items-center min-h-screen px-6 py-8 bg-white text-primary h-[calc(100vh-80px)] ">
+    <div className="flex flex-col items-center min-h-screen px-6 py-8 bg-white text-primary h-[100dvh] ">
       <SignupHeader maxProgress={30} navigateTo="/sign_up_tel_code" />
       <div className="mt-4 text-center">
         <h1 className="mb-2 text-2xl font-bold">Tell us about your self</h1>

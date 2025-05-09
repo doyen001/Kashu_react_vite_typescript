@@ -39,7 +39,7 @@ const SignInMailPage = () => {
   };
 
   return (
-    <div className="flex flex-col justify-between min-h-screen px-6 py-10 bg-white max-w-[800px] h-[calc(100vh-80px)]  w-full mx-auto">
+    <div className="flex flex-col justify-between min-h-screen px-6 py-10 bg-white max-w-[800px] h-[100dvh]  w-full mx-auto">
       <form onSubmit={form.handleSubmit(onSubmit)}>
         <div className="flex flex-col items-center w-full gap-8">
           {/* Title */}

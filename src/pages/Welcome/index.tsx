@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const WelcomePage = () => {
   const navigate = useNavigate();
   return (
-    <div className="flex flex-col items-center justify-between w-full max-w-[800px] mx-auto h-[calc(100vh-80px)] p-6 bg-primary">
+    <div className="flex flex-col items-center justify-between w-full max-w-[800px] mx-auto h-[100dvh] p-6 bg-primary">
       <div>
         <h1 className="text-4xl font-bold text-white">Turn Credit Into </h1>
         <h2 className="text-4xl font-bold text-white">Spendable Cash.</h2>
