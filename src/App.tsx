@@ -19,6 +19,7 @@ import PassportCheck from "./pages/Home/verify/passportCheck";
 import LoadingPage from "./pages/Loading";
 import WelcomePage from "./pages/Welcome";
 import WelcomeMessagePage from "./pages/Welcome/message";
+import HomeLayout from "./layout";
 
 export default function App() {
   return (
@@ -26,7 +27,16 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<WelcomePage />}></Route>
-          <Route path="/home" element={<HomeOverviewPage />}></Route>
+          <Route
+            path="/*"
+            element={
+              <HomeLayout>
+                <Routes>
+                  <Route path="/home" element={<HomeOverviewPage />}></Route>
+                </Routes>
+              </HomeLayout>
+            }
+          />
           <Route path="sign-pin" element={<SignPinPage />}></Route>
           <Route path="/sign-mail" element={<SignInMailPage />}></Route>
           <Route path="/sign-up" element={<SignUpPage />}></Route>

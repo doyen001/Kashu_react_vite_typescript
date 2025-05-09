@@ -32,7 +32,7 @@ export const MainContext = createContext<TMainContext>({
 
 const MainProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [userData, setUserData] = useState<TUser>();
-  console.log("userData", userData);
+
   return (
     <MainContext.Provider value={{ userData, setUserData }}>
       {children}
