@@ -21,11 +21,12 @@ import WelcomePage from "./pages/Welcome";
 import WelcomeMessagePage from "./pages/Welcome/message";
 import HomeLayout from "./layout";
 import CardViewPage from "./pages/Home/card";
+import ActivityPage from "./pages/Home/activity";
+import SettingPage from "./pages/Home/setting";
 
 import "./style/global.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import ActivityPage from "./pages/Home/activity";
 
 export default function App() {
   return (
@@ -42,6 +43,7 @@ export default function App() {
                   <Route path="/home" element={<HomeOverviewPage />}></Route>
                   <Route path="/card" element={<CardViewPage />}></Route>
                   <Route path="/activity" element={<ActivityPage />}></Route>
+                  <Route path="/setting" element={<SettingPage />}></Route>
                 </Routes>
               </HomeLayout>
             }
