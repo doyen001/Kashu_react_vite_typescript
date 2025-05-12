@@ -1,7 +1,8 @@
 import { useRef, useState } from "react";
 import Slider from "react-slick";
 
-import bgImage from "@/assets/bgImage.png";
+import bgImage from "@/assets/Top.png";
+// import bgImage from "@/assets/bgImage.png";
 import { Button } from "../../components/ui/button";
 import { useNavigate } from "react-router-dom";
 
@@ -109,7 +110,7 @@ const WelcomeMessagePage = () => {
               }}
               className="w-full text-primary bg-secondary focus:bg-secondary hover:bg-secondary"
             >
-              create account
+              Create Account
             </Button>
           </div>
         </>

@@ -5,6 +5,7 @@ import { InfoSvg } from "../../../components/ui/icons";
 import VerifyTypeCard from "../../../components/_module/home/verify/verifyTypeCard";
 import { Button } from "../../../components/ui/button";
 import VerifyIdMethodModal from "../../../components/_module/home/verify/verifyIdMethodModal";
+import { useNavigate } from "react-router-dom";
 
 const cardList = [
   {
@@ -22,6 +23,7 @@ const cardList = [
 ];
 
 const VerifyStart = () => {
+  const navigate = useNavigate();
   const [progress, setProgress] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedCard, setSelectedCard] = useState<string | null>(null);
@@ -42,7 +44,11 @@ const VerifyStart = () => {
     <div className="flex flex-col items-center min-h-screen px-6 py-8 bg-white text-primary h-[100dvh] justify-between">
       <div className="relative flex w-full">
         <Progress value={progress} className="mx-auto max-w-16" />
-        <XIcon className="absolute right-0 -top-2" />
+        <XIcon
+          className="absolute right-0 -top-2"
+          role="button"
+          onClick={() => navigate("/home")}
+        />
       </div>
       <div className="flex items-center gap-2">
         <h1 className="mt-4 text-4xl font-bold text-primary opacity-80">

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import SignupHeader from "../../components/pages/signup/signupHeader";
@@ -14,6 +15,9 @@ const priorityList = [
 
 const SignUpQuestionPage = () => {
   const navigate = useNavigate();
+  const [selectedPriority, setSelectedPriority] = useState<
+    string | undefined
+  >();
   return (
     <div className="flex flex-col items-center w-full max-w-[800px] mx-auto h-[100dvh] p-6 bg-white gap-6">
       <SignupHeader maxProgress={100} navigateTo="" isBackButton={false} />
@@ -28,9 +32,14 @@ const SignUpQuestionPage = () => {
           using Kashu today?
         </p>
       </div>
-      <PriorityList priorityList={priorityList} />
+      <PriorityList
+        priorityList={priorityList}
+        selectedPriority={selectedPriority}
+        setSelectedPriority={setSelectedPriority}
+      />
       <div className="flex justify-end w-full">
         <Button
+          disabled={!selectedPriority}
           className="w-[58px] h-[58px] py-2 text-base text-white bg-primary rounded-2xl"
           onClick={() => navigate("/home")}
         >

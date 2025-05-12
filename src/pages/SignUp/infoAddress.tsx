@@ -15,9 +15,7 @@ const formSchema = z.object({
   streetAddress: z.string().min(2, {
     message: "Street address must be at least 2 characters.",
   }),
-  aptNumber: z.string().min(2, {
-    message: "Apt/Suite must be at least 2 characters.",
-  }),
+  aptNumber: z.string(),
   city: z.string().min(1, {
     message: "City is required.",
   }),
@@ -83,7 +81,6 @@ const InfoAddress = () => {
               type="text"
               value={field.value}
               onChange={field.onChange}
-              error={form.formState.errors.aptNumber}
             />
           )}
         />

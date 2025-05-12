@@ -4,20 +4,26 @@ import { ArrowUpIconWithoutLine } from "../../ui/icons";
 
 type Props = {
   priorityList: string[];
+  selectedPriority: string | undefined;
+  setSelectedPriority: React.Dispatch<React.SetStateAction<string | undefined>>;
 };
 
-const PriorityList: React.FC<Props> = ({ priorityList }) => {
+const PriorityList: React.FC<Props> = ({
+  priorityList,
+  selectedPriority,
+  setSelectedPriority,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div
       className={clsx(
-        "border-primary border w-full rounded-[20px] p-5 text-primary ease-in-out opacity-80 transition-all duration-400",
+        "border-primary border w-full rounded-[20px] py-5 text-primary ease-in-out opacity-80 transition-all duration-400",
         isOpen ? "h-fit" : "h-15"
       )}
     >
       <div
-        className="flex items-center justify-between w-full"
+        className="flex items-center justify-between w-full px-5"
         role="button"
         onClick={() => {
           setIsOpen((prev) => !prev);
@@ -34,12 +40,20 @@ const PriorityList: React.FC<Props> = ({ priorityList }) => {
       </div>
       <div
         className={clsx(
-          "transition-opacity duration-400 flex flex-col gap-3",
+          "transition-opacity duration-400 flex flex-col",
           isOpen ? "block mt-3" : "hidden"
         )}
       >
         {priorityList.map((item) => (
-          <p key={item} className="font-medium text-16 text-primary">
+          <p
+            key={item}
+            className={clsx(
+              "font-medium text-16 text-primary px-5 py-2",
+              item === selectedPriority && "bg-secondary"
+            )}
+            role="button"
+            onClick={() => setSelectedPriority(item)}
+          >
             {item}
           </p>
         ))}

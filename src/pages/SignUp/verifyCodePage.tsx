@@ -57,7 +57,7 @@ const VerifyCodePage = () => {
 
         {/* Title and description */}
         <div className="text-center">
-          <h1 className="mb-2 text-xl font-semibold">Enter 6-digit code</h1>
+          <h1 className="mt-4 mb-2 text-2xl font-bold">Enter 6-digit code</h1>
           <p className="text-sm text-[#0F7163]">
             We’ve sent the code to j***@gm***.com. <br />
             Can’t find it? Check your spam folder.

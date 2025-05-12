@@ -70,7 +70,7 @@ const SignUpCheck = () => {
         </p>
       </div>
       <form
-        className="flex flex-col w-full max-w-sm gap-2 mt-6"
+        className="flex flex-col w-full h-full max-w-sm gap-2 mt-6"
         onSubmit={form.handleSubmit(onSubmit)}
       >
         <FormField
@@ -125,13 +125,15 @@ const SignUpCheck = () => {
             />
           )}
         />
-        <Button
-          type="submit"
-          className="w-full h-[58px] py-2 text-base text-white bg-primary rounded-2xl mt-28 float-start"
-          variant="outline"
-        >
-          Continue
-        </Button>
+        <div className="flex items-end h-full">
+          <Button
+            type="submit"
+            className="flex-1 w-full py-2 text-base text-white bg-primary rounded-2xl"
+            variant="outline"
+          >
+            Continue
+          </Button>
+        </div>
       </form>
       <SuccessModel isOpen={isOpen} onOpenChange={() => {}} />
     </div>

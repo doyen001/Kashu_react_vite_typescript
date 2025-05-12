@@ -42,7 +42,7 @@ const TelCode = () => {
 
         {/* Title and description */}
         <div className="mt-4 text-center">
-          <h1 className="mb-2 text-2xl font-bold">Enter 6-digit code</h1>
+          <h1 className="mb-2 text-2xl font-bold">Enter 4-digit code</h1>
           <p className="text-sm text-primary">
             {`We’ve sent the code to ****${userData?.phone?.slice(-3) ?? 0}`}
           </p>

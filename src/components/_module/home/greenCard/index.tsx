@@ -3,12 +3,13 @@ import { MasterIcon } from "../../../ui/icons";
 
 type Props = {
   title: string;
-  // type: string;
+  type: string;
   name: string;
   cvv: string;
 };
 
-const GreenCard: React.FC<Props> = ({ title, name, cvv }) => {
+const GreenCard: React.FC<Props> = ({ title, type, name, cvv }) => {
+  console.log("type", type);
   return (
     <div className="relative w-full bg-primary rounded-2xl pt-[15px] pl-6 pr-4 text-white h-[191px]">
       <div className="flex justify-between">

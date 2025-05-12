@@ -48,12 +48,12 @@ const SignUpPage = () => {
 
   return (
     <div className="flex flex-col items-center justify-between px-6 py-8 bg-white h-[100dvh]">
-      <div className="flex flex-col items-center justify-center w-full pt-10">
+      <div className="flex flex-col items-center justify-center w-full pt-2">
         <div className="w-full mb-2 max-w-16">
           <Progress value={progress} />
         </div>
         {/* Title */}
-        <h1 className="mb-6 text-2xl font-semibold text-primary">
+        <h1 className="mb-6 text-4xl font-bold text-primary">
           Getting Started
         </h1>
       </div>
