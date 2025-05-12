@@ -25,6 +25,7 @@ import CardViewPage from "./pages/Home/card";
 import "./style/global.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import ActivityPage from "./pages/Home/activity";
 
 export default function App() {
   return (
@@ -40,6 +41,7 @@ export default function App() {
                 <Routes>
                   <Route path="/home" element={<HomeOverviewPage />}></Route>
                   <Route path="/card" element={<CardViewPage />}></Route>
+                  <Route path="/activity" element={<ActivityPage />}></Route>
                 </Routes>
               </HomeLayout>
             }

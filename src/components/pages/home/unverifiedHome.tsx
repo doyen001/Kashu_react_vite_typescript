@@ -60,6 +60,7 @@ const UnverifiedHome = () => {
 
         {/* Invite friends */}
         <HomeInvite code={"LP867J"} />
+        <div className="pt-20"></div>
       </div>
     </div>
   );

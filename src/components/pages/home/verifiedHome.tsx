@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import AprOptions from "@/components/_module/home/aprOptions";
 import HomeActivity from "@/components/_module/home/homeActivity";
 import HomeInvite from "@/components/_module/home/homeInvite";
@@ -35,6 +36,7 @@ const activityList = [
 ];
 
 const VerifiedHome = () => {
+  const navigate = useNavigate();
   return (
     <>
       {/* Header */}
@@ -68,7 +70,10 @@ const VerifiedHome = () => {
       <div className="px-6 mt-8">
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-lg font-bold text-primary">Recent activity</h2>
-          <button className="text-sm font-medium text-primary opacity-80">
+          <button
+            className="text-sm font-medium text-primary opacity-80"
+            onClick={() => navigate("/activity")}
+          >
             See all
           </button>
         </div>
