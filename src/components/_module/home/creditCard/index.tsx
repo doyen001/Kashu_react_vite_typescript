@@ -1,7 +1,11 @@
 import { Button } from "../../../ui/button";
 import { CardSVG } from "../../../ui/icons";
 
-const AddCreditCard = () => {
+type Props = {
+  setPageStep: React.Dispatch<React.SetStateAction<"add" | "card">>;
+};
+
+const AddCreditCard: React.FC<Props> = ({ setPageStep }) => {
   return (
     <div className="p-4 bg-[#E8FFE8] shadow-md rounded-3xl">
       <div className="flex flex-col items-center mb-4">
@@ -17,6 +21,7 @@ const AddCreditCard = () => {
       <Button
         className="w-full mt-6 text-base font-bold text-white bg-primary rounded-xl"
         size={"lg"}
+        onClick={() => setPageStep("card")}
       >
         + Add a Credit Card
       </Button>

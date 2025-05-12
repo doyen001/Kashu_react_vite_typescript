@@ -37,29 +37,36 @@ const cardList = [
 const CardView = () => {
   return (
     <div className="h-full">
-      <Slider {...settings}>
-        {cardList.map((item, index) => (
-          <div className="w-full px-2" key={index}>
-            <GreenCard
-              title={item.title}
-              name={item.name}
-              cvv={item.cvv}
-              type={item.type}
-            />
-          </div>
-        ))}
-      </Slider>
-      <CardInfo />
-      <div className="px-[6px]">
+      <div className="overflow-hidden">
+        <Slider {...settings}>
+          {cardList.map((item, index) => (
+            <div className="w-full px-2" key={index}>
+              <GreenCard
+                title={item.title}
+                name={item.name}
+                cvv={item.cvv}
+                type={item.type}
+              />
+            </div>
+          ))}
+        </Slider>
+      </div>
+      <div className="py-7">
+        <CardInfo />
+      </div>
+      <div className="px-[6px] py-7">
         <Button className="w-full bg-secondary text-primary focus:bg-secondary hover:bg-secondary">
           <p className="text-base font-bold">Charge this card</p>
           <ArrowDownIcon className="w-4 h-4 -rotate-90" />
         </Button>
       </div>
       <div>
-        <h2 className="text-lg font-medium text-primary">Recent activity</h2>
+        <h2 className="mb-6 text-lg font-medium text-primary">
+          Recent activity
+        </h2>
         <ActivityRowItem />
       </div>
+      <div className="pt-20"></div>
     </div>
   );
 };
