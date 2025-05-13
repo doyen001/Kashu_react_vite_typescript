@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import clsx from "clsx";
-import { EyeIcon } from "./icons";
 import { FieldError } from "react-hook-form";
+import useDebounce from "../../lib/hooks/useEdbounce";
+import { getCardType } from "../../lib/function";
+import { VisaIcon, MasterIcon } from "./icons";
 
-interface FloatingInputProps {
+interface CardNumberInputProps {
   label: string;
   type?: string;
   value: string;
@@ -13,7 +15,7 @@ interface FloatingInputProps {
   onClick?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const FloatingInput = ({
+const CardNumberInput = ({
   label,
   type = "text",
   value,
@@ -21,21 +23,29 @@ const FloatingInput = ({
   error,
   props,
   onClick,
-}: FloatingInputProps & React.InputHTMLAttributes<HTMLInputElement>) => {
+}: CardNumberInputProps & React.InputHTMLAttributes<HTMLInputElement>) => {
   const [isFocused, setIsFocused] = useState(false);
-  const [showPassword, setShowPassword] = useState(false);
+  const [cardType, setCardType] = useState<string>("Unknown");
+  const searchDebounce = useDebounce(value, 1500);
 
   const shouldFloat = isFocused || value?.length > 0;
+
+  useEffect(() => {
+    if (searchDebounce !== "") {
+      const cardType = getCardType(searchDebounce);
+      setCardType(cardType);
+    }
+  }, [searchDebounce]);
 
   return (
     <div className="relative w-full">
       <input
-        type={showPassword ? "text" : type}
+        type={type}
         value={value}
         onChange={onChange}
+        onClick={onClick}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
-        onClick={onClick}
         className="w-full px-4 pt-6 pb-1 text-base font-medium placeholder-transparent border peer border-primary rounded-xl text-primary focus:outline-none focus:border-2 focus:border-primary"
         placeholder={label}
         id={label}
@@ -51,16 +61,15 @@ const FloatingInput = ({
       >
         {label}
       </label>
-      {type === "password" && value && value.length > 0 && (
-        <EyeIcon
-          className="absolute -translate-y-1/2 right-4 top-7"
-          role="button"
-          onClick={() => setShowPassword((prev) => !prev)}
-        />
+      {cardType !== "Unknown" && (
+        <div className="absolute -translate-y-1/2 right-4 top-7">
+          {cardType === "Visa" && <VisaIcon />}
+          {cardType === "MasterCard" && <MasterIcon />}
+        </div>
       )}
       {error && <p className="text-sm text-red-500">{error.message}</p>}
     </div>
   );
 };
 
-export default FloatingInput;
+export default CardNumberInput;

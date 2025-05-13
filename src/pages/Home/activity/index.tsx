@@ -30,7 +30,7 @@ const activityList = [
 ];
 
 const ActivityPage = () => {
-  const [filter, setFilter] = useState("");
+  const [filter, setFilter] = useState<"type" | "date" | "export">("type");
   return (
     <div className="h-[100dvh] px-5 w-full space-y-5">
       <h1 className="text-2xl font-bold text-primary">Transactions</h1>

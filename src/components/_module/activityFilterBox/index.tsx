@@ -7,8 +7,8 @@ import clsx from "clsx";
 import { FilterIcon } from "../../../components/ui/icons";
 
 type Props = {
-  filter: string;
-  setFilter: (filter: string) => void;
+  filter: "type" | "date" | "export";
+  setFilter: (filter: "type" | "date" | "export") => void;
 };
 
 const ActivityFilterBox = ({ filter, setFilter }: Props) => {
