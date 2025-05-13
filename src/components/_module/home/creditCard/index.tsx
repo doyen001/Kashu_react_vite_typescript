@@ -1,11 +1,12 @@
 import { Button } from "../../../ui/button";
 import { CardSVG } from "../../../ui/icons";
-
+import { useNavigate } from "react-router-dom";
 type Props = {
   setPageStep: React.Dispatch<React.SetStateAction<"add" | "card">>;
 };
 
-const AddCreditCard: React.FC<Props> = ({ setPageStep }) => {
+const AddCreditCard: React.FC<Props> = ({}) => {
+  const navigate = useNavigate();
   return (
     <div className="p-4 bg-[#E8FFE8] shadow-md rounded-3xl">
       <div className="flex flex-col items-center mb-4">
@@ -21,7 +22,9 @@ const AddCreditCard: React.FC<Props> = ({ setPageStep }) => {
       <Button
         className="w-full mt-6 text-base font-bold text-white bg-primary rounded-xl"
         size={"lg"}
-        onClick={() => setPageStep("card")}
+        onClick={() => {
+          navigate("/card/new");
+        }}
       >
         + Add a Credit Card
       </Button>
