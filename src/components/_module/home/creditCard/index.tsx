@@ -2,10 +2,14 @@ import { Button } from "../../../ui/button";
 import { CardSVG } from "../../../ui/icons";
 import { useNavigate } from "react-router-dom";
 type Props = {
-  setPageStep: React.Dispatch<React.SetStateAction<"add" | "card">>;
+  type?: "card" | "deposit";
+  setPageStep:
+    | React.Dispatch<React.SetStateAction<"add" | "card">>
+    | React.Dispatch<React.SetStateAction<"add" | "select">>;
 };
 
-const AddCreditCard: React.FC<Props> = ({}) => {
+const AddCreditCard: React.FC<Props> = ({ type = "card", setPageStep }) => {
+  console.log("type", type);
   const navigate = useNavigate();
   return (
     <div className="p-4 bg-[#E8FFE8] shadow-md rounded-3xl">
@@ -23,7 +27,11 @@ const AddCreditCard: React.FC<Props> = ({}) => {
         className="w-full mt-6 text-base font-bold text-white bg-primary rounded-xl"
         size={"lg"}
         onClick={() => {
-          navigate("/card/new");
+          if (type === "card") {
+            navigate("/card/new");
+          } else {
+            setPageStep("select" as any);
+          }
         }}
       >
         + Add a Credit Card

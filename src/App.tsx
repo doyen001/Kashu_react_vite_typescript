@@ -24,6 +24,8 @@ import CardViewPage from "./pages/Home/card";
 import ActivityPage from "./pages/Home/activity";
 import SettingPage from "./pages/Home/setting";
 import NewCardPage from "./pages/Home/card/new";
+import DepositPage from "./pages/Home/deposit";
+import DepositAmountPage from "./pages/Home/deposit/amount";
 
 import "./style/global.css";
 import "slick-carousel/slick/slick.css";
@@ -70,6 +72,8 @@ export default function App() {
           <Route path="/welcome" element={<WelcomePage />} />
           <Route path="/welcome-message" element={<WelcomeMessagePage />} />
           <Route path="/card/new" element={<NewCardPage />} />
+          <Route path="/deposit" element={<DepositPage />} />
+          <Route path="/deposit/amount" element={<DepositAmountPage />} />
         </Routes>
       </BrowserRouter>
     </MainProvider>

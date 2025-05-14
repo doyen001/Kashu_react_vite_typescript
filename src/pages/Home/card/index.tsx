@@ -9,7 +9,7 @@ const CardViewPage = () => {
       <p className="mt-3 text-2xl font-bold text-primary">My Cards</p>
       <div className="h-full mt-7">
         {pageStep === "add" ? (
-          <AddCreditCard setPageStep={setPageStep} />
+          <AddCreditCard setPageStep={setPageStep} type="card" />
         ) : (
           <CardView />
         )}

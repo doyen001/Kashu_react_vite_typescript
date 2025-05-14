@@ -202,7 +202,7 @@ const NewCardPage = () => {
       ) : step === "success" ? (
         <CardSuccessPage />
       ) : (
-        <CardFailedPage />
+        <CardFailedPage message="Your card failed validation." />
       )}
     </div>
   );
