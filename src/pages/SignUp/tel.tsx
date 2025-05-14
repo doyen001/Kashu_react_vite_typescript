@@ -28,10 +28,14 @@ const SignUpTelPage = () => {
         </div>
 
         {/* Title and description */}
-        <div className="flex flex-col items-center justify-between w-full h-full mt-4">
+        <div className="flex flex-col items-center justify-between w-full h-full mt-4 rounded-">
           <h1 className="mb-2 text-4xl font-bold">Verify Phone</h1>
           <div className="space-y-4">
             <PhoneInput
+              inputClass="custom-phone-input"
+              buttonClass="custom-phone-button"
+              containerClass="custom-phone-container"
+              dropdownClass="custom-phone-dropdown"
               country={"us"}
               value={phone}
               onChange={(phone) => {

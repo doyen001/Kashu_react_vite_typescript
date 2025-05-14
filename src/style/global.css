@@ -2,3 +2,28 @@
   color: #0b5147 !important;
   opacity: 1 !important;
 }
+
+.custom-phone-container {
+  border-radius: 12px;
+  border: 1px solid #d1e3dd;
+  padding: 0.4rem 0.75rem;
+  background-color: white;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.custom-phone-input {
+  border: none !important;
+  font-size: 16px;
+  font-weight: 500;
+  color: #94a3b8; /* text-muted-like color */
+  background: transparent;
+  width: 100%;
+  padding-left: 48px !important;
+}
+
+.custom-phone-button {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin-right: 8px;
+}
