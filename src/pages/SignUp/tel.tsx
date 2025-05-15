@@ -28,23 +28,37 @@ const SignUpTelPage = () => {
         </div>
 
         {/* Title and description */}
-        <div className="flex flex-col items-center justify-between w-full h-full mt-4 rounded-">
+        <div className="flex flex-col items-center justify-between w-full h-full mt-4">
           <h1 className="mb-2 text-4xl font-bold">Verify Phone</h1>
           <div className="space-y-4">
             <PhoneInput
-              inputClass="custom-phone-input"
-              buttonClass="custom-phone-button"
-              containerClass="custom-phone-container"
-              dropdownClass="custom-phone-dropdown"
               country={"us"}
               value={phone}
               onChange={(phone) => {
                 setPhone(phone);
               }}
               placeholder="+1 000 000 0000"
+              inputStyle={{
+                borderRadius: "16px",
+                boxShadow: "0px 4px 2px rgba(0, 0, 0, 0.2)",
+                padding: "28px 0px 28px 64px",
+                paddingTop: "28px",
+                paddingBottom: "28px",
+                border: "1px solid #E5E7EB",
+                fontSize: "20px",
+                fontWeight: "bold",
+              }}
+              buttonStyle={{
+                border: "none",
+                backgroundColor: "transparent",
+                height: "100%",
+                width: "100px",
+                padding: "0px 0px 0px 8px",
+                zIndex: 10,
+              }}
             />
             <Button
-              className="w-full py-2 text-base text-white bg-primary rounded-x max-w-[300px]"
+              className="w-full mt-6 text-base font-bold text-white bg-primary rounded-xl"
               onClick={() => {
                 setUserData((prev: any) => ({ ...prev, phone }));
                 navigate("/sign_up_tel_code");

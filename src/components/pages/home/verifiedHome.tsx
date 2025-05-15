@@ -98,6 +98,7 @@ const VerifiedHome = () => {
 
       {/* APR Offer */}
       <AprOptions />
+      <div className="pt-20"></div>
     </>
   );
 };

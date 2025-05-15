@@ -10,7 +10,7 @@ const HomeLayout: React.FC<Props> = ({ children }) => {
   const { pathname } = useLocation();
   return (
     <div className="max-w-[800px] h-screen w-full mx-auto bg-white pb-28">
-      {pathname !== "/setting" && (
+      {pathname !== "/setting" && pathname !== "/home" && (
         <div className="relative z-30 flex items-center justify-center py-4">
           <KashuLogo />
         </div>
