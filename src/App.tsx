@@ -30,6 +30,8 @@ import DepositAmountPage from "./pages/Home/deposit/amount";
 import "./style/global.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import WithdrawPage from "./pages/Home/widthdraw";
+import WithdrawAmountPage from "./pages/Home/widthdraw/amount";
 
 export default function App() {
   return (
@@ -74,6 +76,8 @@ export default function App() {
           <Route path="/card/new" element={<NewCardPage />} />
           <Route path="/deposit" element={<DepositPage />} />
           <Route path="/deposit/amount" element={<DepositAmountPage />} />
+          <Route path="/withdraw" element={<WithdrawPage />} />
+          <Route path="/withdraw/amount" element={<WithdrawAmountPage />} />
         </Routes>
       </BrowserRouter>
     </MainProvider>
