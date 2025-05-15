@@ -27,3 +27,41 @@
   padding: 0 !important;
   margin-right: 8px;
 }
+.react-tel-input .flag-dropdown .arrow {
+  display: none;
+  background-image: none;
+  border: none;
+  width: auto;
+  height: auto;
+}
+
+.react-tel-input .flag-dropdown::after {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 8px;
+  background-image: url("data:image/svg+xml;utf8,<svg width='16 ' height='8' viewBox='0 0 18 8' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M0.200059 0.400059C0.53143 -0.0417689 1.15823 -0.131312 1.60006 0.200059L9.00006 5.75006L16.4001 0.200059C16.8419 -0.131312 17.4687 -0.0417689 17.8001 0.400059C18.1314 0.841887 18.0419 1.46869 17.6001 1.80006L10.2001 7.35006C9.48895 7.88339 8.51117 7.88339 7.80006 7.35006L0.400059 1.80006C-0.0417689 1.46869 -0.131312 0.841887 0.200059 0.400059Z' fill='%2392aca8' fill-opacity='0.8'/></svg>");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  left: 40%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -2;
+}
+
+.react-tel-input .selected-flag:hover {
+  background-color: transparent;
+}
+
+.react-tel-input .selected-flag:focus {
+  background-color: transparent;
+}
+
+.react-tel-input .flag-dropdown.open .selected-flag {
+  background-color: transparent;
+}
+
+.react-tel-input .selected-flag {
+  width: 48px;
+}

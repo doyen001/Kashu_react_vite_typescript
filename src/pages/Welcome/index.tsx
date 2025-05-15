@@ -1,8 +1,23 @@
+import { useEffect } from "react";
 import { Button } from "../../components/ui/button";
 import { useNavigate } from "react-router-dom";
 
 const WelcomePage = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const htmlTag = document.querySelector("html");
+    if (htmlTag) {
+      htmlTag.style.backgroundColor = "#0B5147";
+    }
+
+    return () => {
+      if (htmlTag) {
+        htmlTag.style.backgroundColor = "";
+      }
+    };
+  }, []);
+
   return (
     <div className="flex flex-col items-center justify-between w-full max-w-[800px] mx-auto h-[100dvh] p-6 bg-primary">
       <div>
