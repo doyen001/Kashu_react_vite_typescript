@@ -104,6 +104,12 @@ const WelcomeMessagePage = () => {
             </div>
           </div>
           <div className="px-6 mb-12">
+            <button
+              className="w-full py-4 text-base font-bold text-primary"
+              onClick={() => setCurrentSide(0)}
+            >
+              Back
+            </button>
             <Button
               onClick={() => {
                 navigate("/sign-up");
