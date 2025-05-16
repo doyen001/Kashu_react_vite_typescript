@@ -32,6 +32,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import WithdrawPage from "./pages/Home/widthdraw";
 import WithdrawAmountPage from "./pages/Home/widthdraw/amount";
+import VerifiedPage from "./pages/Home/verified";
+import CardViewTestPage from "./pages/Home/card/view";
 
 export default function App() {
   return (
@@ -46,7 +48,15 @@ export default function App() {
               <HomeLayout>
                 <Routes>
                   <Route path="/home" element={<HomeOverviewPage />}></Route>
+                  <Route
+                    path="/home/verified"
+                    element={<VerifiedPage />}
+                  ></Route>
                   <Route path="/card" element={<CardViewPage />}></Route>
+                  <Route
+                    path="/card/view"
+                    element={<CardViewTestPage />}
+                  ></Route>
                   <Route path="/activity" element={<ActivityPage />}></Route>
                   <Route path="/setting" element={<SettingPage />}></Route>
                 </Routes>

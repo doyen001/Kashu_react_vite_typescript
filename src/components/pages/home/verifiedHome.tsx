@@ -46,7 +46,10 @@ const VerifiedHome = () => {
       <div className="px-6 mt-6">
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-lg font-bold text-primary">My Cards</h2>
-          <button className="text-sm font-medium text-primary opacity-80">
+          <button
+            className="text-sm font-medium text-primary opacity-80"
+            onClick={() => navigate("/card/new")}
+          >
             + Add Card
           </button>
         </div>

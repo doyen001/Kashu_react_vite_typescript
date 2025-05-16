@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
 import HomeInvite from "../../_module/home/homeInvite";
-import { CardSVG, InfoIcon } from "../../ui/icons";
+import { CardSVG, InfoIcon, KashuLogo } from "../../ui/icons";
 import { PlusIcon } from "lucide-react";
 import { Button } from "../../ui/button";
 
@@ -11,7 +11,10 @@ const UnverifiedHome = () => {
     <div className="inset-0 absolute top-0 min-h-screen bg-[#F7FDFB] flex flex-col items-center justify-start z-10">
       {/* Top Header */}
       <div className="w-full bg-primary min-h-[300px] h-full text-white px-6 py-8 rounded-b-[2rem] relative text-center z-10">
-        <div className="py-9">
+        <div className="flex items-center justify-center mb-4">
+          <KashuLogo height={20} width={86} />
+        </div>
+        <div className="py-5">
           <h1 className="text-4xl font-bold">Welcome, Robert</h1>
           <p className="mt-1 text-3xl font-bold">$0.00</p>
           <div className="flex items-center justify-center gap-1 mt-1 text-sm text-white/80">
@@ -53,7 +56,10 @@ const UnverifiedHome = () => {
               Add a credit card and request funds to meet your goals
             </p>
           </div>
-          <Button className="w-full text-white bg-primary rounded-xl">
+          <Button
+            className="w-full text-white bg-primary rounded-xl"
+            onClick={() => navigate("/card/new")}
+          >
             + Add card
           </Button>
         </div>

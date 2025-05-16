@@ -11,7 +11,7 @@ type Props = {
 const GreenCard: React.FC<Props> = ({ title, type, name, cvv }) => {
   console.log("type", type);
   return (
-    <div className="relative w-full bg-primary rounded-2xl pt-[15px] pl-6 pr-4 text-white h-[191px]">
+    <div className="relative bg-primary rounded-2xl pt-[15px] pl-6 pr-4 text-white h-[191px] w-full slick-card-wrapper">
       <div className="flex justify-between">
         <p className="text-lg font-bold">{title}</p>
         <MasterIcon />

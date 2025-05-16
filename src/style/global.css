@@ -2,6 +2,15 @@
   color: #0b5147 !important;
   opacity: 1 !important;
 }
+.slick-slide .slick-card-wrapper {
+  background-color: #0b5147 !important;
+  opacity: 0.2 !important;
+}
+
+.slick-slide.slick-center .slick-card-wrapper {
+  background-color: #0b5147 !important;
+  opacity: 1 !important;
+}
 
 .custom-phone-container {
   border-radius: 12px;
