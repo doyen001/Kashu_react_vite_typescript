@@ -8,7 +8,7 @@ import { Button } from "../../ui/button";
 const UnverifiedHome = () => {
   const navigate = useNavigate();
   return (
-    <div className="inset-0 absolute top-0 min-h-screen bg-[#F7FDFB] flex flex-col items-center justify-start z-10">
+    <div className="inset-0 absolute top-0 bg-[#F7FDFB] flex flex-col items-center justify-start z-10">
       {/* Top Header */}
       <div className="w-full bg-primary min-h-[300px] h-full text-white px-6 py-8 rounded-b-[2rem] relative text-center z-10">
         <div className="flex items-center justify-center mb-4">

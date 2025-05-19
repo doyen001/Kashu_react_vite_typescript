@@ -34,7 +34,7 @@ const WithdrawPage = () => {
   ]);
 
   return (
-    <div className="flex flex-col items-center min-h-screen px-6 py-8 bg-white text-primary h-[100dvh]">
+    <div className="flex flex-col items-center px-6 py-8 bg-white text-primary h-[100dvh]">
       <div className="relative flex w-full">
         <XIcon
           className="absolute right-0 -top-2"
