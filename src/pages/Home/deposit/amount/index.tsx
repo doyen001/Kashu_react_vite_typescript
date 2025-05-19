@@ -13,7 +13,7 @@ const DepositAmountPage = () => {
   const navigate = useNavigate();
   const [pageStep, setPageStep] = useState<
     "choose" | "submit" | "success" | "failed"
-  >("success");
+  >("choose");
   const [loading, setLoading] = useState<boolean>(false);
   const [price, setPrice] = useState<string>("");
 

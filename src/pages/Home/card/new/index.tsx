@@ -190,11 +190,11 @@ const NewCardPage = () => {
               </Button>
             </div>
           </form>
+          <div className="flex-1"></div>
           <PhoneKeyboardBox
             handleKeyPress={handleKeyPress}
             handleBackspace={handleBackspace}
             handleReset={handleReset}
-            className="pt-[48px]"
           />
         </>
       ) : step === "loading" ? (

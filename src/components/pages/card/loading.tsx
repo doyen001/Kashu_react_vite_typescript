@@ -11,7 +11,7 @@ const VerifyCardLoadingPage = () => {
         <p className="text-sm font-medium text-primary">
           Please wait while we protect your
         </p>
-        <p>account from fraud.</p>
+        <p className="text-sm font-medium text-primary">account from fraud.</p>
       </div>
       <div className="pt-10">
         <div className="relative">

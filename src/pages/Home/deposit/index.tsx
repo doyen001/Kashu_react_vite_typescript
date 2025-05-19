@@ -6,6 +6,7 @@ import SelectDeposit from "../../../components/pages/deposit/selectDeposit";
 const DepositPage = () => {
   const navigate = useNavigate();
   const [pageStep, setPageStep] = useState<"add" | "select">("add");
+  console.log("pageStep", pageStep);
   return (
     <div className="p-6 h-[100dvh] flex flex-col gap-4">
       <div className="relative flex w-full">
