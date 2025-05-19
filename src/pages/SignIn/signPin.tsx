@@ -18,13 +18,15 @@ const SignPinPage = () => {
       </div>
 
       {/* Continue Button */}
-      <Button
-        className="w-full mt-10 text-white bg-primary max-w-[312px]"
-        disabled={pin.length !== 4}
-        onClick={() => navigate("/sign-mail")}
-      >
-        Continue
-      </Button>
+      <div className="w-full pt-10">
+        <Button
+          className="w-full text-white bg-primary max-w-[312px]"
+          disabled={pin.length !== 4}
+          onClick={() => navigate("/sign-mail")}
+        >
+          Continue
+        </Button>
+      </div>
     </div>
   );
 };
