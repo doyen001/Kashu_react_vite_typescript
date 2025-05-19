@@ -19,7 +19,7 @@ const SignUpTelPage = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-between min-h-screen px-6 py-8 bg-white text-primary h-[100dvh] ">
+    <div className="flex flex-col items-center justify-between min-h-screen px-6 py-8 bg-white text-primary h-[100svh] ">
       {/* Back icon */}
       <div className="flex flex-col items-center justify-center w-full h-full">
         {/* Progress bar */}

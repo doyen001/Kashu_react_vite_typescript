@@ -109,7 +109,7 @@ const NewCardPage = () => {
             <XIcon
               className="absolute right-0 -top-2"
               role="button"
-              onClick={() => navigate("/card")}
+              onClick={() => navigate(-1)}
             />
           </div>
           <h1 className="mt-4 text-4xl font-bold text-primary">

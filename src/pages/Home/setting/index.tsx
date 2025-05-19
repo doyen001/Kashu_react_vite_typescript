@@ -40,7 +40,7 @@ const SettingPage = () => {
       <div className="w-full max-w-md p-4 mx-auto">
         {menuItems.map((item, index) => (
           <div key={item.label}>
-            <button className="flex items-center justify-between w-full pb-4">
+            <button className="flex items-center justify-between w-full py-4">
               <div className="flex items-center gap-4">
                 <div className="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-50 text-emerald-500">
                   {item.icon}

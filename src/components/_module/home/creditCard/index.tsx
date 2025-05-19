@@ -9,10 +9,9 @@ type Props = {
 };
 
 const AddCreditCard: React.FC<Props> = ({ type = "card", setPageStep }) => {
-  console.log("type", type);
   const navigate = useNavigate();
   return (
-    <div className="p-4 bg-[#E8FFE8] shadow-md rounded-3xl">
+    <div className="p-4 bg-[#E8FFE8] shadow-md rounded-3xl px-6">
       <div className="flex flex-col items-center mb-4">
         <CardSVG />
         <h2 className="text-2xl font-bold text-primary leading-[34px]">
