@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const PassportCheck = () => {
   const navigate = useNavigate();
   return (
-    <div className="flex flex-col items-center min-h-screen px-6 py-8 bg-white text-primary gap-10 h-[100dvh]">
+    <div className="flex flex-col items-center px-6 py-8 bg-white text-primary gap-10 h-[100dvh]">
       <div>
         <SignupHeader maxProgress={30} navigateTo="/" />
         <div className="mt-4 text-center">

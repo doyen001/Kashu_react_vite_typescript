@@ -101,7 +101,7 @@ const NewCardPage = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center min-h-screen px-6 py-8 bg-white text-primary h-[100dvh] justify-between">
+    <div className="flex flex-col items-center px-6 py-8 bg-white text-primary h-[100dvh] justify-between">
       {step === "create" ? (
         <>
           <div className="relative flex w-full">
