@@ -30,14 +30,14 @@ type FormSchema = z.infer<typeof formSchema>;
 
 const InfoPersonal = () => {
   const navigate = useNavigate();
-  const { setUserData } = useContext(MainContext);
+  const { userData, setUserData } = useContext(MainContext);
   const form = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      firstName: "",
-      lastName: "",
-      birthDate: "",
-      socialSecurityNumber: "",
+      firstName: userData?.firstName ?? "",
+      lastName: userData?.lastName ?? "",
+      birthDate: userData?.birthDate ?? "",
+      socialSecurityNumber: userData?.socialSecurityNumber ?? "",
     },
   });
 
