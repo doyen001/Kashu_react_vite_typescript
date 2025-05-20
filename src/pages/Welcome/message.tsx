@@ -114,7 +114,8 @@ const WelcomeMessagePage = () => {
               onClick={() => {
                 navigate("/sign-up");
               }}
-              className="w-full text-primary bg-secondary focus:bg-secondary hover:bg-secondary"
+              className="w-full"
+              variant="secondary"
             >
               Create Account
             </Button>
