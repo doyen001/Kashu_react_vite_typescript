@@ -31,15 +31,15 @@ type FormSchema = z.infer<typeof formSchema>;
 
 const InfoAddress = () => {
   const navigate = useNavigate();
-  const { setUserData } = useContext(MainContext);
+  const { userData, setUserData } = useContext(MainContext);
   const form = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      streetAddress: "",
-      aptNumber: "",
-      city: "",
-      state: "",
-      zipCode: "",
+      streetAddress: userData?.streetAddress ?? "",
+      aptNumber: userData?.aptNumber ?? "",
+      city: userData?.city ?? "",
+      state: userData?.state ?? "",
+      zipCode: userData?.zipCode ?? "",
     },
   });
 
