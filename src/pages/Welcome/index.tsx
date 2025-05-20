@@ -29,7 +29,8 @@ const WelcomePage = () => {
       </div>
       <div className="flex flex-col w-full gap-1">
         <Button
-          className="w-full text-primary bg-secondary focus:bg-secondary hover:bg-secondary"
+          className="w-full"
+          variant="secondary"
           onClick={() => navigate("/welcome-message")}
         >
           Get Started

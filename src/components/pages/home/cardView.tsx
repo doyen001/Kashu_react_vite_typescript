@@ -61,7 +61,7 @@ const CardView = () => {
         <CardInfo />
       </div>
       <div className="px-6 py-7">
-        <Button className="w-full bg-secondary text-primary focus:bg-secondary hover:bg-secondary">
+        <Button className="w-full" variant="secondary">
           <p className="text-base font-bold">Charge this card</p>
           <ArrowDownIcon className="w-4 h-4 -rotate-90" />
         </Button>

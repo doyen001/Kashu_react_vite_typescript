@@ -32,7 +32,7 @@ const DepositSuccessPage = () => {
         <PlusIcon className="w-5 h-5" />
         Convert more credit
       </Button>
-      <Button className="w-full bg-secondary rounded-xl text-primary focus:bg-secondary hover:bg-secondary">
+      <Button className="w-full rounded-xl" variant="secondary">
         Withdraw or Move Funds
         <ArrowRightIcon className="w-5 h-5" />
       </Button>

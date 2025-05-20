@@ -19,14 +19,16 @@ const CardSuccessPage = () => {
       <p className="pt-3 text-sm font-medium text-primary pb-9">
         You’ve added a new card to Kashu.
       </p>
-      <Button className="w-full text-base font-bold text-white rounded-xl">
-        <PlusIcon className="w-5 h-5" />
-        Add new card
-      </Button>
-      <Button className="w-full bg-secondary rounded-xl text-primary focus:bg-secondary hover:bg-secondary">
-        Deposit Funds
-        <ArrowRightIcon className="w-5 h-5" />
-      </Button>
+      <div className="flex flex-col w-full gap-2">
+        <Button className="w-full text-base font-bold text-white rounded-xl">
+          <PlusIcon className="w-5 h-5" />
+          Add new card
+        </Button>
+        <Button className="w-full" variant="secondary">
+          Deposit Funds
+          <ArrowRightIcon className="w-5 h-5" />
+        </Button>
+      </div>
     </div>
   );
 };
