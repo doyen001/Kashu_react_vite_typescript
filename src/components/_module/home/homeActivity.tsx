@@ -18,7 +18,7 @@ const HomeActivity: React.FC<Props> = ({
   return (
     <div className="flex items-center justify-between">
       <div className="flex items-center gap-3">
-        {icon}
+        <div className="p-3 rounded-full bg-thirdGreen">{icon}</div>
         <div>
           <p className="text-sm font-bold text-primary">{name}</p>
           <p className="text-sm font-medium text-primary opacity-40">{date}</p>

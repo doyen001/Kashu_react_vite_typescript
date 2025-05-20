@@ -11,7 +11,6 @@ import { FormField } from "../../../../components/ui/form";
 import CardNumberInput from "../../../../components/ui/cardNumberInput";
 import { Button } from "../../../../components/ui/button";
 import { ArrowRightIcon } from "../../../../components/ui/icons";
-import PhoneKeyboardBox from "../../../../components/ui/phoneKeyboardBox";
 import VerifyCardLoadingPage from "../../../../components/pages/card/loading";
 import CardSuccessPage from "../../../../components/pages/card/success";
 import CardFailedPage from "../../../../components/pages/card/failed";
@@ -39,12 +38,7 @@ const NewCardPage = () => {
   const [step, setStep] = useState<"create" | "loading" | "success" | "failed">(
     "create"
   );
-  const insertedInputRef = useRef<{ [key: string]: string }>({
-    cardHolderName: "",
-    cardNumber: "",
-    expiration: "",
-    cvv: "",
-  });
+
   const selectedInputRef = useRef<string>("");
 
   const form = useForm<FormSchema>({
@@ -56,39 +50,6 @@ const NewCardPage = () => {
       cvv: "",
     },
   });
-
-  const handleKeyPress = (digit: string) => {
-    form.setValue(
-      selectedInputRef.current as keyof FormSchema,
-      (insertedInputRef.current?.[selectedInputRef.current] ?? "") + digit
-    );
-    insertedInputRef.current[selectedInputRef.current] =
-      (insertedInputRef.current?.[selectedInputRef.current] ?? "") + digit;
-  };
-
-  const handleBackspace = () => {
-    insertedInputRef.current[selectedInputRef.current] =
-      insertedInputRef.current?.[selectedInputRef.current].slice(0, -1);
-    form.setValue(
-      selectedInputRef.current as keyof FormSchema,
-      insertedInputRef.current[selectedInputRef.current]
-    );
-  };
-
-  const handleReset = () => {
-    form.reset({
-      cardHolderName: "",
-      cardNumber: "",
-      expiration: "",
-      cvv: "",
-    });
-    insertedInputRef.current = {
-      cardHolderName: "",
-      cardNumber: "",
-      expiration: "",
-      cvv: "",
-    };
-  };
 
   const onSubmit = (data: FormSchema) => {
     console.log("data", data);
@@ -140,6 +101,9 @@ const NewCardPage = () => {
               name="cardNumber"
               render={({ field }) => (
                 <CardNumberInput
+                  type="tel"
+                  pattern="[0-9]*"
+                  inputMode="numeric"
                   label="Card number"
                   value={field.value}
                   onChange={field.onChange}
@@ -157,7 +121,9 @@ const NewCardPage = () => {
                 render={({ field }) => (
                   <FloatingInput
                     label="Expiration"
-                    type="text"
+                    type="tel"
+                    pattern="[0-9]*"
+                    inputMode="numeric"
                     value={field.value}
                     onChange={field.onChange}
                     onClick={() => {
@@ -173,7 +139,9 @@ const NewCardPage = () => {
                 render={({ field }) => (
                   <FloatingInput
                     label="CVV"
-                    type="text"
+                    type="tel"
+                    pattern="[0-9]*"
+                    inputMode="numeric"
                     value={field.value}
                     onChange={field.onChange}
                     onClick={() => {
@@ -190,12 +158,7 @@ const NewCardPage = () => {
               </Button>
             </div>
           </form>
-          <PhoneKeyboardBox
-            handleKeyPress={handleKeyPress}
-            handleBackspace={handleBackspace}
-            handleReset={handleReset}
-            className="pt-[48px]"
-          />
+          <div className="flex-1"></div>
         </>
       ) : step === "loading" ? (
         <VerifyCardLoadingPage />
