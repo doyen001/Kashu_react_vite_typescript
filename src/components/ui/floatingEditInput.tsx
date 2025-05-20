@@ -30,7 +30,7 @@ const FloatingEditInput = ({
         onChange={onChange}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
-        className="w-full px-4 pt-6 pb-1 text-base font-medium placeholder-transparent border peer border-primary rounded-xl text-primary focus:outline-none focus:border-2 focus:border-primary"
+        className="w-full px-4 pt-6 pb-1 text-base font-medium placeholder-transparent border peer border-primary/20 rounded-2xl text-primary focus:outline-none focus:border-2 focus:border-primary"
         placeholder={label}
         id={label}
         readOnly={!editable}

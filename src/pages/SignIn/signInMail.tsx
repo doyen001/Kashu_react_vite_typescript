@@ -86,14 +86,14 @@ const SignInMailPage = () => {
             <Button
               type="submit"
               size="icon"
-              className="text-white rounded-xl bg-primary hover:bg-primary"
+              className="text-white rounded-xl bg-primary hover:bg-primary w-[58px] h-[58px]"
             >
               <ArrowRightIcon />
             </Button>
           </div>
         </div>
       </form>
-
+      <div className="flex-1"></div>
       {/* Social Sign-in */}
       <div className="flex flex-col items-center gap-6 mt-10">
         <p className="text-sm text-primary">Or continue with:</p>

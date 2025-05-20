@@ -11,12 +11,12 @@ const UnverifiedHome = () => {
     <div className="inset-0 absolute top-0 bg-[#F7FDFB] flex flex-col items-center justify-start z-10">
       {/* Top Header */}
       <div className="w-full bg-primary min-h-[300px] h-full text-white px-6 py-8 rounded-b-[2rem] relative text-center z-10">
-        <div className="flex items-center justify-center mb-4">
+        <div className="flex items-center justify-center">
           <KashuLogo height={20} width={86} />
         </div>
-        <div className="py-5">
+        <div className="py-5 space-y-2">
           <h1 className="text-4xl font-bold">Welcome, Robert</h1>
-          <p className="mt-1 text-3xl font-bold">$0.00</p>
+          <p className="pt-4 mt-1 text-3xl font-bold">$0.00</p>
           <div className="flex items-center justify-center gap-1 mt-1 text-sm text-white/80">
             Available balance
             <InfoIcon className="w-4 h-4" />
@@ -49,7 +49,7 @@ const UnverifiedHome = () => {
         <div className="p-4 bg-[#E8FFE8] shadow-md rounded-3xl">
           <div className="flex flex-col items-center mb-4">
             <CardSVG />
-            <h2 className="text-lg font-semibold text-primary">
+            <h2 className="text-2xl font-bold text-primary">
               Link a credit card
             </h2>
             <p className="text-sm text-primary w-[65%] text-center">

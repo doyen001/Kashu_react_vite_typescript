@@ -20,7 +20,7 @@ const CardViewPage = () => {
           </button>
         )}
       </div>
-      <div className="h-full mt-7">
+      <div className="h-full px-6 mt-7">
         {pageStep === "add" ? (
           <AddCreditCard setPageStep={setPageStep} type="card" />
         ) : (
