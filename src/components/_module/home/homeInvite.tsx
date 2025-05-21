@@ -14,7 +14,10 @@ const HomeInvite = ({ code }: { code: string }) => {
             Code <span className="font-medium ">{code}</span>
           </p>
           <CopyIcon className="w-6 h-6 ml-auto cursor-pointer text-primary text-muted-foreground" />
-          <Button className="font-medium max-h-9 min-h-9 w-fit bg-secondary text-primary rounded-xl">
+          <Button
+            className="font-medium max-h-9 min-h-9 w-fit rounded-xl"
+            variant={"secondary"}
+          >
             Earn $200
           </Button>
         </div>
