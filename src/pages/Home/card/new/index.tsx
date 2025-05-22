@@ -36,7 +36,7 @@ const NewCardPage = () => {
   const navigate = useNavigate();
   const [progress, setProgress] = useState(0);
   const [step, setStep] = useState<"create" | "loading" | "success" | "failed">(
-    "success"
+    "create"
   );
 
   const selectedInputRef = useRef<string>("");

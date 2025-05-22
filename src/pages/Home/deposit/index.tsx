@@ -8,7 +8,7 @@ const DepositPage = () => {
   const [pageStep, setPageStep] = useState<"add" | "select">("add");
   console.log("pageStep", pageStep);
   return (
-    <div className="p-6 h-[100dvh] flex flex-col gap-4">
+    <div className="p-6 h-[100dvh] flex flex-col gap-4 w-full max-w-[800px] mx-auto">
       <div className="relative flex w-full">
         <XIcon
           className="absolute right-0 -top-2"

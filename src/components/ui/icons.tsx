@@ -790,7 +790,7 @@ export const AddCreditCardIcon = ({ height = 38, width = 38, ...props }) => (
   </svg>
 );
 
-export const SettingHeader = ({ height = 360, width = 360, ...props }) => (
+export const SettingHeader = ({ height = 275, width = 360, ...props }) => (
   <svg
     width={width}
     height={height}

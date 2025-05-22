@@ -71,7 +71,7 @@ const VerifyCodePage = () => {
             <div
               key={i}
               className={clsx(
-                "w-9 h-14 border rounded-2xl flex items-center justify-center text-lg font-medium",
+                "w-9 h-14 border rounded-2xl flex items-center justify-center text-lg font-medium text-primary/80",
                 digit ? "border-primary" : "border-muted-foreground"
               )}
             >

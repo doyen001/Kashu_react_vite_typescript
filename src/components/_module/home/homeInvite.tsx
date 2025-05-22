@@ -3,9 +3,9 @@ import { Button } from "../../ui/button";
 
 const HomeInvite = ({ code }: { code: string }) => {
   return (
-    <div className="rounded-[40px] bg-[#F1FAF3] p-4 space-y-2">
+    <div className="rounded-[40px] bg-[#F1FAF3] p-3 space-y-2">
       <div className="flex items-center w-full gap-2">
-        <div className="flex items-center justify-center w-32 h-20 rounded-3xl bg-lightGreen">
+        <div className="flex items-center justify-center p-[18px] rounded-3xl bg-lightGreen">
           <GiftIcon className="w-16 h-16 text-primary" />
         </div>
         <div className="w-full pl-4 text-left">
@@ -15,7 +15,7 @@ const HomeInvite = ({ code }: { code: string }) => {
           </p>
           <CopyIcon className="w-6 h-6 ml-auto cursor-pointer text-primary text-muted-foreground" />
           <Button
-            className="font-medium max-h-9 min-h-9 w-fit rounded-xl"
+            className="font-medium shadow-none max-h-9 min-h-9 w-fit rounded-xl"
             variant={"secondary"}
           >
             Earn $200

@@ -3,7 +3,10 @@ type Props = {
   setPrice: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const AmountInputBox = ({ price, setPrice }: Props) => {
+const AmountInputBox = ({
+  price,
+  setPrice,
+}: Props & React.InputHTMLAttributes<HTMLInputElement>) => {
   return (
     <div className="flex items-center gap-2 px-14">
       <p className="text-4xl font-bold text-primary">$</p>

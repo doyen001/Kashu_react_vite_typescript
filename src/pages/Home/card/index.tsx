@@ -3,10 +3,11 @@ import { useNavigate } from "react-router-dom";
 
 import AddCreditCard from "../../../components/_module/home/creditCard";
 import CardView from "../../../components/pages/home/cardView";
+import clsx from "clsx";
 
 const CardViewPage = () => {
   const navigate = useNavigate();
-  const [pageStep, setPageStep] = useState<"add" | "card">("add");
+  const [pageStep, setPageStep] = useState<"add" | "card">("card");
   return (
     <div className="h-full">
       <div className="flex items-end justify-between px-6">
@@ -20,7 +21,9 @@ const CardViewPage = () => {
           </button>
         )}
       </div>
-      <div className="h-full px-6 mt-7">
+      <div
+        className={clsx("h-full mt-7", pageStep === "add" ? "px-6" : "px-0")}
+      >
         {pageStep === "add" ? (
           <AddCreditCard setPageStep={setPageStep} type="card" />
         ) : (
