@@ -42,34 +42,25 @@ const WelcomeMessagePage = () => {
             <Slider {...settings} ref={ref}>
               <div className="w-full">
                 <div className="text-4xl font-bold text-center">
-                  <h1>Lorem ipsum </h1>
-                  <h1>lorem ipsumeritus</h1>
+                  <h1>Charge Your Card. </h1>
+                  <h1>Load Your Wallet.</h1>
                 </div>
                 <div className="mt-6 text-sm font-medium text-center opacity-80">
-                  <p>Lorem ipsum lorem ipsumeritus</p>
-                  <p>Lorem ipsum lorem ipsumeritus</p>
+                  <p>Charge your credit card and instantly load that</p>
+                  <p>amount (minus fees) into your Kashu Wallet.</p>
                 </div>
               </div>
               <div className="w-full">
                 <div className="text-4xl font-bold text-center">
-                  <h1>Lorem ipsum </h1>
-                  <h1>lorem ipsumeritus</h1>
+                  <h1>Move Your Funds </h1>
+                  <h1>With Ease.</h1>
                 </div>
                 <div className="mt-6 text-sm font-medium text-center opacity-80">
-                  <p>Lorem ipsum lorem ipsumeritus</p>
-                  <p>Lorem ipsum lorem ipsumeritus</p>
+                  <p>Disburse funds from Kashu to your bank, debit</p>
+                  <p>car, or friends. Total control - no surprises.</p>
                 </div>
               </div>
-              <div className="w-full">
-                <div className="text-4xl font-bold text-center">
-                  <h1>Lorem ipsum </h1>
-                  <h1>lorem ipsumeritus</h1>
-                </div>
-                <div className="mt-6 text-sm font-medium text-center opacity-80">
-                  <p>Lorem ipsum lorem ipsumeritus</p>
-                  <p>Lorem ipsum lorem ipsumeritus</p>
-                </div>
-              </div>
+              <div className="w-full"></div>
             </Slider>
           </div>
           <div className="flex justify-between px-5 mb-12">
@@ -94,12 +85,12 @@ const WelcomeMessagePage = () => {
           <div className="px-5">
             <div className="w-full">
               <div className="text-4xl font-bold text-center">
-                <h1>Lorem ipsum </h1>
-                <h1>lorem ipsumeritus</h1>
+                <h1>Ready to Try</h1>
+                <h1>Kashu?</h1>
               </div>
               <div className="mt-6 text-sm font-medium text-center opacity-80">
-                <p>Lorem ipsum lorem ipsumeritus</p>
-                <p>Lorem ipsum lorem ipsumeritus</p>
+                <p>Whether it's rent, bills, or an emergency-Kashu</p>
+                <p>gives your credit card real-world power.</p>
               </div>
             </div>
           </div>
