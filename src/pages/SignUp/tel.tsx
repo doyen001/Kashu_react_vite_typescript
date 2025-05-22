@@ -40,13 +40,13 @@ const SignUpTelPage = () => {
               placeholder="+1 000 000 0000"
               inputStyle={{
                 borderRadius: "16px",
-                boxShadow: "0px 4px 2px rgba(0, 0, 0, 0.2)",
                 padding: "28px 0px 28px 64px",
                 paddingTop: "28px",
                 paddingBottom: "28px",
-                border: "1px solid #E5E7EB",
-                fontSize: "20px",
+                border: "1px solid rgba(11, 81, 71, 0.2)",
+                fontSize: "17px",
                 fontWeight: "bold",
+                fontFamily: "DM Sans",
               }}
               buttonStyle={{
                 border: "none",

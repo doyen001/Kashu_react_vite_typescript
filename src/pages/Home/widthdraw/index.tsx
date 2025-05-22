@@ -47,7 +47,7 @@ const WithdrawPage = () => {
         $22,500.00
       </h2>
       <div className="flex items-center justify-center gap-1 mt-1 mb-4 text-sm text-gray-500">
-        <p className="font-sans">Available for transfer</p>
+        <p className="text-lg text-primary/40">Available for transfer</p>
         <InfoIcon className="w-4 h-4" />
       </div>
       {accounts.length <= 0 ? (
@@ -56,7 +56,7 @@ const WithdrawPage = () => {
         <AccountsCard accounts={accounts} />
       )}
       <h2 className="mt-4 text-2xl font-bold text-center text-primary">
-        More way to send
+        More ways to send
       </h2>
       <div className="mt-4 space-y-3">
         <OtherWayCard

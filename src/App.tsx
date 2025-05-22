@@ -26,14 +26,14 @@ import SettingPage from "./pages/Home/setting";
 import NewCardPage from "./pages/Home/card/new";
 import DepositPage from "./pages/Home/deposit";
 import DepositAmountPage from "./pages/Home/deposit/amount";
-
-import "./style/global.css";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import WithdrawPage from "./pages/Home/widthdraw";
 import WithdrawAmountPage from "./pages/Home/widthdraw/amount";
 import VerifiedPage from "./pages/Home/verified";
 import CardViewTestPage from "./pages/Home/card/view";
+
+import "./style/global.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default function App() {
   return (

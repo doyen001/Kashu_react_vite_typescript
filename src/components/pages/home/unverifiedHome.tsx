@@ -47,14 +47,16 @@ const UnverifiedHome = () => {
 
         {/* Link card */}
         <div className="p-4 bg-[#E8FFE8] shadow-md rounded-3xl">
-          <div className="flex flex-col items-center mb-4">
+          <div className="flex flex-col items-center mb-4 space-y-6">
             <CardSVG />
-            <h2 className="text-2xl font-bold text-primary">
-              Link a credit card
-            </h2>
-            <p className="text-sm text-primary w-[65%] text-center">
-              Add a credit card and request funds to meet your goals
-            </p>
+            <div className="flex flex-col items-center w-full">
+              <h2 className="text-2xl font-bold text-primary">
+                Link a credit card
+              </h2>
+              <p className="text-sm text-primary w-[65%] text-center mt-1">
+                Add a credit card and request funds to meet your goals
+              </p>
+            </div>
           </div>
           <Button
             className="w-full text-white bg-primary rounded-xl"

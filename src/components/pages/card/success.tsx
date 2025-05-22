@@ -13,12 +13,14 @@ const CardSuccessPage = () => {
         onClick={() => navigate("/card")}
       />
       <img src={successImage} alt="success" />
-      <h1 className="text-4xl font-bold text-primary">
-        Card added successfully!
-      </h1>
-      <p className="pt-3 text-sm font-medium text-primary pb-9">
-        You’ve added a new card to Kashu.
-      </p>
+      <div className="w-full text-center">
+        <h1 className="text-4xl font-bold text-primary">
+          Card added successfully!
+        </h1>
+        <p className="pt-3 text-sm font-medium text-primary pb-9">
+          You’ve added a new card to Kashu.
+        </p>
+      </div>
       <div className="flex flex-col w-full gap-2">
         <Button className="w-full text-base font-bold text-white rounded-xl">
           <PlusIcon className="w-5 h-5" />

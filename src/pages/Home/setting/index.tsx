@@ -22,7 +22,7 @@ const SettingPage = () => {
   return (
     <div>
       <div
-        className="relative inset-0 w-full px-6 pt-6 pb-10 text-white bg-bottom bg-no-repeat bg-cover "
+        className="relative inset-0 w-full px-6 pt-6 pb-10 text-white bg-bottom bg-no-repeat bg-cover md:rounded-b-[100px] md:bg-primary"
         style={{ backgroundImage: `url(${bgImage})` }}
       >
         <div className="flex items-center justify-center ">

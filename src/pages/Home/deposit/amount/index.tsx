@@ -5,7 +5,6 @@ import PaymentCard from "../../../../components/ui/paymentCard";
 import { LogoIcon, MasterIcon } from "../../../../components/ui/icons";
 import { Button } from "../../../../components/ui/button";
 import AmountInputBox from "../../../../components/ui/amountInputBox";
-import PhoneKeyboardBox from "../../../../components/ui/phoneKeyboardBox";
 import { Checkbox } from "../../../../components/ui/checkbox";
 import CardFailedPage from "../../../../components/pages/card/failed";
 import DepositSuccessPage from "../../../../components/pages/deposit/success";
@@ -17,18 +16,8 @@ const DepositAmountPage = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [price, setPrice] = useState<string>("");
 
-  const handleKeyPress = (digit: string) => {
-    setPrice((prev) => prev + digit);
-  };
-
-  const handleBackspace = () => {
-    setPrice((prev) => prev.slice(0, -1));
-  };
-
-  const handleReset = () => setPrice("");
-
   return (
-    <div className="p-6 h-[100dvh] w-full flex flex-col items-center gap-4 relative">
+    <div className="p-6 h-[100dvh] w-full flex flex-col items-center gap-4 relative max-w-[800px] mx-auto">
       {pageStep !== "success" && pageStep !== "failed" && (
         <div className="relative flex justify-center w-full">
           <ArrowLeft
@@ -54,8 +43,16 @@ const DepositAmountPage = () => {
       )}
       {pageStep === "choose" ? (
         <>
-          <AmountInputBox price={price} setPrice={setPrice} />
-          <div className="w-full">
+          <div className="mt-2">
+            <AmountInputBox
+              price={price}
+              setPrice={setPrice}
+              type="tel"
+              pattern="[0-9]*"
+              inputMode="numeric"
+            />
+          </div>
+          <div className="w-full mt-2">
             <PaymentCard
               name="Apple Card"
               last4="Mastercard 8490"
@@ -69,12 +66,6 @@ const DepositAmountPage = () => {
           >
             Continue
           </Button>
-          <PhoneKeyboardBox
-            handleKeyPress={handleKeyPress}
-            handleBackspace={handleBackspace}
-            handleReset={handleReset}
-            className="pt-[30px]"
-          />
         </>
       ) : pageStep === "submit" ? (
         <>
@@ -102,15 +93,15 @@ const DepositAmountPage = () => {
           </div>
           <div className="w-full">
             <div className="flex justify-between py-2 border-b border-gray-200">
-              <p className="text-sm font-medium text-primary">Fee</p>
+              <p className="text-sm font-medium text-primary/40">Fee</p>
               <p className="text-sm font-bold text-primary">10%</p>
             </div>
             <div className="flex justify-between py-2 border-b border-gray-200">
-              <p className="text-sm font-medium text-primary">Fee Cost</p>
+              <p className="text-sm font-medium text-primary/40">Fee Cost</p>
               <p className="text-sm font-bold text-primary">$2,500</p>
             </div>
             <div className="flex justify-between py-2 border-b border-gray-200">
-              <p className="text-sm font-medium text-primary">
+              <p className="text-sm font-medium text-primary/40">
                 Total available funds after fees
               </p>
               <p className="text-sm font-bold text-primary">$22,500</p>
@@ -127,7 +118,8 @@ const DepositAmountPage = () => {
             </p>
           </div>
           <Button
-            className="w-full bg-secondary text-primary focus:bg-secondary active:bg-secondary"
+            className="w-full shadow-none"
+            variant={"secondary"}
             onClick={() => {
               setLoading(true);
             }}
