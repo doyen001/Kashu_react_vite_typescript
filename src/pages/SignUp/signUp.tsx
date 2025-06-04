@@ -9,6 +9,8 @@ import { Button } from "../../components/ui/button";
 import { Progress } from "../../components/ui/progress";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FormField } from "../../components/ui/form";
+import { useMutation } from "@tanstack/react-query";
+import { signUpUser } from "../../api/auth/functions";
 
 const formSchema = z.object({
   email: z
@@ -36,9 +38,27 @@ const SignUpPage = () => {
     },
   });
 
+  const { mutate, isPending } = useMutation({
+    mutationFn: signUpUser,
+    onSuccess: () => {
+      navigate("/verify-code");
+    },
+    onError: (error: unknown) => {
+      console.error("Signup failed:", error);
+      // TODO: Show Toast or error message to the user
+    },
+  });
+
   const onSubmit = (values: FormSchema) => {
-    console.log(values);
-    navigate("/verify-code");
+    const data = {
+      "email": values.email,
+      "password": values.password,
+      "location_id": 279685,
+      "global_on_id": "12",
+      "send_2fa": true,
+      "user_id": 2
+    };
+    mutate(data);
   };
 
   useEffect(() => {
@@ -94,8 +114,11 @@ const SignUpPage = () => {
           <Button
             type="submit"
             className="w-full py-2 text-base text-white bg-primary rounded-xl hover:bg-primary"
+            disabled={isPending}
           >
-            Submit
+            {isPending
+              ? <div className="animate-spin h-5 w-5 border-2 border-white border-t-transparent rounded-full"></div>
+              : "Submit"}
           </Button>
         </form>
 
